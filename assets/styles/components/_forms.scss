@@ -1,15 +1,179 @@
+// "Text" kind of inputs...
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="tel"],
+input[type="time"],
+textarea {
+  @extend .form-control;
+  border-radius: em(17/4) em(17);
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+
+  @include media-breakpoint-up(md) {
+    font-size: em(30);
+  }
+}
+textarea::placeholder {
+  font-size: em(40, 30); 
+
+  @include media-breakpoint-up(md) {
+    font-size: em(37, 30);
+  }
+}
+@include media-breakpoint-up(md) {
+  textarea {
+    border-radius: em(17/4) em(34);
+  }
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-color: $blue--light;
+  -webkit-text-fill-color: $blue--bright;
+  -webkit-box-shadow: 0 0 0px 1000px $blue inset;
+  background-color: $blue--light;
+  transition: background-color 5000s ease-in-out 0s, border-color 1s ease-out ;
+}
 // Search form
 .search-form {
   @extend .form-inline;
 }
 .search-form label {
-  font-weight: normal;
   @extend .form-group;
-}
-.search-form .search-field {
-  @extend .form-control;
+  width: 100%;
+  margin-bottom: 0;
+  font-weight: normal;
 }
 .search-form .search-submit {
   @extend .btn;
   @extend .btn-secondary;
+  font-family: "FontAwesome";
+  color: $grey;
+  border-left: none;
+  border-top-right-radius: em(17);
+}
+input {
+  height: em(34, 14);
+  font-size: em(14);
+  color: $grey;
+}
+.comment-form textarea:focus, 
+.form-control:focus, 
+input[type=email]:focus, 
+input[type=password]:focus, 
+input[type=search]:focus, 
+input[type=tel]:focus, 
+input[type=text]:focus, 
+input[type=time]:focus, 
+input[type=url]:focus {
+  border-color: $blue--light;
+}
+.form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $grey;
+  transition: color .35s ease;
+}
+.form-control::-moz-placeholder { /* Firefox 19+ */
+  color: $grey;
+  transition: color .35s ease;
+}
+.form-control:-ms-input-placeholder { /* IE 10+ */
+  color: $grey;
+  transition: color .35s ease;
+}
+.form-control:-moz-placeholder { /* Firefox 18- */
+  color: $grey;
+  transition: color .35s ease;
+}
+.form-control:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $grey--light;
+}
+.form-control:focus::-moz-placeholder { /* Firefox 19+ */
+  color: $grey--light;
+}
+.form-control:focus:-ms-input-placeholder { /* IE 10+ */
+  color: $grey--light;
+}
+.form-control:focus:-moz-placeholder { /* Firefox 18- */
+  color: $grey--light;
+}
+.nf-form-fields-required {
+display: none;
+}
+
+.nf-form-content {
+  position: relative;
+  .nf-field-container {
+    position: relative;
+    .nf-error-required-error {
+      position: absolute;
+      bottom: .5em;
+      right: .5em;
+      animation: pulse 2s ease-in-out infinite;
+      @include media-breakpoint-up(md) {
+        bottom: .87em;
+      }
+    }
+  }
+  .textarea-container {
+    .nf-error-required-error {
+      left: 0.5em;
+      animation: pulse 2s ease-in-out infinite;
+      @include media-breakpoint-up(md) {
+        left: 50%;
+        bottom: 50%;
+        margin-left: -17.5%;
+        width: auto;
+      }
+    }
+  }
+  .submit-container {
+    position: absolute;
+    right: 0em;
+    bottom: 0em;
+    margin-right: 1em;
+    margin-bottom: em(10, 14);
+    font-size: em(14);
+  }
+}
+.nf-after-form-content {
+  margin-bottom: 1em;
+  text-align: center;
+}
+.nf-response-msg {
+  font-size: em(21);
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  color:$blue;
+  margin-bottom: 2em;
+  p {
+    margin-bottom: 0.5em;
+  }
+  .fa {
+    font-size: em(31);
+  }
+}
+.section--blue {
+  input[type="text"],
+  input[type="search"],
+  input[type="email"],
+  input[type="password"],
+  input[type="url"],
+  input[type="tel"],
+  input[type="time"] {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    color: $white;
+    border: none;
+    background-color: $blue--dark;
+  }
 }

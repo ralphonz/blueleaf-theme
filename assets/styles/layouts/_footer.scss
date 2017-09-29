@@ -1,0 +1,50 @@
+.footer {
+  background: $white;
+  @include bdr-tp($grey);
+  
+  @include media-breakpoint-up(md) {
+    padding-left: 5%;
+  }
+  @include media-breakpoint-up(lg) {
+    padding-top: 5vw;
+  }
+
+  .container-fluid {
+    padding: em(32);
+    text-align: center;
+  }
+  .social-networks {
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-bottom: 2em;
+  }
+}
+.footer-nav {
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+
+  li {
+    display: inline-block;
+    padding: em(16);
+    max-width: em(112);
+    .fa, a {
+      text-align: center;
+      color: $grey;
+    }
+    &:hover .fa, &:hover a {
+      color: $blue--light;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
+.copyright {
+  margin-top: em(48);
+  font-size: em(12);
+  color: $grey;
+  a {
+    color: $grey;
+  }
+}

@@ -1,0 +1,145 @@
+.section--blue {
+  width: calc(100% + 40px);
+  margin-top: em(40);
+  margin-left: -20px;
+  margin-bottom: em(40);
+  padding: em(36);
+  color: $white;
+  background: $blue--dark;
+  
+  @include media-breakpoint-up(md) {
+    padding-top: em(50);
+    padding-bottom: em(60);
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 100vw;
+    position: relative;
+    left: -11vw;
+    padding-left: 12.5vw;
+    padding-right: 12.5vw;
+    margin-top: em(100);
+    margin-bottom: em(100);
+  }
+
+  a {
+    color: $blue--light;
+
+    &.btn-default {
+      color: $white;
+    }
+  }
+  h2, .large-paragraph {
+    color: $white;
+  }
+  h3 { 
+    margin-bottom: 0;
+    font-size: em(42);
+    color: $white;
+  }
+  .small-heading {
+    font-size: em(32);
+  }
+  .large-heading {
+    font-size: em(58);
+  }
+  .large-paragraph {
+    margin-bottom: em(32);
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .text-right-not-sm, .text-left-not-sm {
+      text-align: center;
+      .btn {
+        margin-bottom: em(30);
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .content .section--blue {
+    h2 {
+      margin-top: 0;
+    }
+  }
+}
+
+
+/************************ Bold Page Template and Contact Page Templates *****************************/
+.page-template-template-bold, .page-template-template-contact {
+  .content {
+    padding-left: em(40);
+    padding-right: em(40);
+    line-height: 1.5;
+    color: $grey;
+
+    @include media-breakpoint-up(md) {
+      margin-right: 50%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-left: em(80);
+      padding-right: em(80);
+    }
+  }
+  .content.no-hero {
+    @include media-breakpoint-up(lg) {
+      padding-top: 2.5vw;
+      h2 {
+        margin-bottom: 10vw;
+      }
+    }
+  }
+  h2 {
+    width: 2.7em;
+    margin: em(64, 72) auto;
+    padding-bottom: 0;
+    font-size: 3.75em;
+    letter-spacing: -.07em;
+    text-align: left;
+    border-bottom: none;
+  }
+  .wp-caption-text {
+    // font-size: em(18);
+  }
+  .section--blue {
+    width: calc(100% + 80px);
+    margin-left: -40px;
+
+    @include media-breakpoint-up(md) {
+      position: fixed;
+      top: em(60);
+      right: 0;
+      width: 47.5%;
+      height: 100vh;
+      overflow: scroll;
+      z-index: 2;
+      margin-top: 0;
+      animation: slideInFromRight 1s ease-out;
+    }
+
+    @include media-breakpoint-up(lg) {
+      left: auto;
+      padding-left: 7.5vw;
+      padding-right: 7.5vw;
+    }
+  }
+  .footer .container-fluid {
+    @include media-breakpoint-up(md) {
+      width:calc(50% + 1.25em);
+      margin-left: 0;
+    }
+  }
+}

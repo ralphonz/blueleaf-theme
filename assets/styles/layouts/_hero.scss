@@ -1,0 +1,51 @@
+.hero {
+  @include bdr-btm();
+  
+  @include media-breakpoint-up(md) {
+    height: 50vw;
+    overflow: hidden;
+    perspective: 1;
+    padding-top: 60px;
+    animation: fadeIn 1s ease-out;
+  }
+
+  .subtitle {
+    position: absolute;
+    bottom: em(10, 18);
+    left: 0;
+    right: 0;
+    width: 95%;
+    margin: 0 auto;
+    padding: em(10, 18);
+    font-size: em(18);
+    text-align: center;
+    -webkit-font-smoothing: auto;
+    color: $white;
+    background-color: rgba(0,0,0, .4);
+    @include bdr($white);
+    @include leaf($radius: 1em);
+
+    @include media-breakpoint-up(md) {
+      bottom: em(20, 46);
+      padding: em(10, 46);
+      font-size: em(46, 18);
+
+    }
+  }
+}
+.hero-image {
+  width: 100%;
+  height: auto;
+  animation: fadeIn .5s ease-in-out;
+
+  @include media-breakpoint-up(md) {
+    position: fixed;
+  }
+}
+.content.no-hero {
+  padding-top: 0;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 7.5vw;
+  }
+}

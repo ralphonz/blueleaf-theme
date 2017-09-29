@@ -8,7 +8,13 @@
       <?php the_content(); ?>
     </div>
     <footer>
-      <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
+      <?php if(has_category()) : ?>
+        <div class="categories">
+          <?php _e('Related Categories', 'blueleaf'); ?>: 
+          <?php the_category() ?>
+        </div>
+      <?php endif; ?>
+      <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'blueleaf'), 'after' => '</p></nav>']); ?>
     </footer>
     <?php comments_template('/templates/comments.php'); ?>
   </article>

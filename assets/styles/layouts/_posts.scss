@@ -1,0 +1,72 @@
+.post {
+  header {
+    padding: em(20) em(20) 0;
+
+    time, .byline {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: em(12);
+      font-style: italic;
+      color: $grey;
+      margin-bottom: 0;
+    }
+  }
+  .entry-summary {
+    padding: 0 em(20);
+    .btn {
+      display: block;
+      margin-top: em(20);
+    }
+  }
+  .mejs-container {
+    margin-bottom: 1.5em;
+  }
+  embed {
+    max-width: 100%;
+    height: auto;
+  }
+}
+.blog, .post-archive {
+  .post {
+    margin-bottom: em(30);
+    @include bdr-btm($grey);
+
+    header {
+      margin-bottom: 1.5em;
+    }
+  }
+  &>.post {
+    padding-top: em(30);
+  }
+  .sticky {
+    background: $grey--light;
+    padding-top: 1.25em;
+    position: relative;
+    top:-1.25em;
+  }
+  .entry-title {
+    border-bottom: none;
+  }
+}
+.single-post {
+  .post {
+    margin: em(60) em(20);
+    padding-top: em(20);
+
+    header {
+      margin: em(20) em(20) em(60);
+    }
+    .categories {
+      @include bdr-tp($grey);
+      padding-top: em(15);
+      color: $grey;
+      a {
+        color: $grey;
+      }
+    }
+  }
+  .entry-title {
+    margin-bottom: em(20, 36);
+  }
+}

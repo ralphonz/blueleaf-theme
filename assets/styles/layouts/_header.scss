@@ -1,0 +1,134 @@
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  min-height: 60px;
+  background-color:$blue--dark;
+  padding: em(10) 0;
+
+  @include media-breakpoint-up(md) {
+    width: 5%;
+    height: 100%;
+    padding-top: 0;
+
+    animation: slideDown 1s .3s ease-out;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+}
+path {
+  transition: fill .2s cubic-bezier(0.29, 0.49, 0.62, 0.29);
+}
+
+.navbar-brand {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  width: em(40, 20);
+  height: em(40, 20);
+
+  @include media-breakpoint-up(md) {
+    width: 100%;
+    height: em(60, 20);
+    text-align: center;
+    padding: em(3, 20) em(3, 20) em(15, 20);
+    @include bdr-btm($blue);
+    
+    svg  {
+      fill: $white;
+    }
+
+    &:hover svg path{
+      fill: $blue--light;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: .33em .2em .5em;
+  }
+}
+
+.mobile-contact-link {
+  position: absolute;
+  top: em(7);
+  right: em(20);
+  font-size: em(21);
+  color: $white;
+  &:hover {
+    text-decoration: none;
+    color: $blue--light;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.navbar-toggle {
+  position: absolute;
+  top: em(7);
+  left: em(10);
+  font-size: em(21);
+  background: transparent;
+  border: none;
+  color: $white;
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.collapse {
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+  &.show {
+    background: $blue--dark;
+  }
+}
+
+#menu-primary-navigation {
+  padding: em(10) 0;
+  li {
+    text-align: center;
+    padding: em(10) 0;
+
+    @include media-breakpoint-up(md) {
+      padding: 0;
+    }
+  }
+  a {
+    color: $white;
+
+    .fa {
+      display: inline-block;
+      margin-right: .5em;
+    }
+
+    @include media-breakpoint-up(md) {
+      visibility: collapse;
+
+      .fa {
+        visibility: visible;
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: $blue--light;
+    }
+  }
+}
+
+.menu-item {
+  .fa, a {
+    display: block;
+    transition: color .2s cubic-bezier(0.29, 0.49, 0.62, 0.29)
+  }
+}

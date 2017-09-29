@@ -1,0 +1,178 @@
+/*
+
+Decleration order:
+
+  1.Positioning
+  2.Box model
+  3.Typographic
+  4.Visual
+
+(see http://codeguide.co/#css-declaration-order)
+
+*/
+
+h1 {
+  @include heading;
+  font-size: em(36, 16);
+  text-align: center;
+}
+h2 {
+  @include heading;
+  margin-bottom: em(20, 29);
+  padding-bottom: em(10, 29);
+  font-size: em(29);
+  text-align: center;
+  @include bdr-btm($grey);
+
+  @include media-breakpoint-up(md) {
+    font-size: em(66);
+    text-align: left;
+  }
+}
+h3, h4 {
+  @include heading;
+}
+.page-header, .post-header, .single .entry-title {
+  position: relative;
+  margin-bottom: em(20, 16);
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+  
+  h1 {
+    margin-bottom: 0;
+    padding: em(9, 36) em(10, 36) em(7, 36);
+    @include bdr-btm();
+
+    .btn {
+      font-size: em(14, 36);
+      float: right;
+    } 
+
+    @include media-breakpoint-up(md) {
+      position: fixed;
+      top: 0;
+      z-index: 9;
+      width: 95%;
+      text-align: left;
+      background-color: $white;
+      animation: slideInFromLeft 1s ease-out;
+    }
+  }
+}
+.content, .entry-content {
+  line-height: 2;
+  
+  ul li, ol li {
+    padding: em(10) 0;
+  }
+
+  h1 {
+    padding-top: .87em;
+    margin-bottom: 1em;
+  }
+  h2 {
+    padding-top: .75em;
+  }
+  h3 {
+    margin-bottom: .5em;
+  }
+
+  a {
+    color: $blue--light;
+    text-decoration: underline;
+  }
+
+  @include media-breakpoint-up(lg) {
+    h2:not(.subtitle) {
+      margin-top: em(30);
+    }
+  }
+}
+.large-paragraph {
+  @include heading;
+  font-size: em(24);
+}
+@media (max-width: 768px) {
+  .mobile-center {
+    text-align: center;
+  }
+}
+
+blockquote, q {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  margin-left: 17.5%;
+  margin-right: 17.5%;
+  line-height: 1.33;
+  text-align: justify ;
+  hyphens: auto;
+  quotes: "“" "”" "‘" "’";
+ 
+  &:before, &:after {
+    position: absolute;
+    top: em(10, 32);
+    font-size: em(32);
+    line-height: 0;
+    font-family: FontAwesome;
+  }
+
+  &:before {
+      content: "\f10d";
+      left: -1.25em;
+  }
+  &:after {
+      content: "\f10e";
+      right: -1.25em;
+  }
+
+  footer {
+    margin-bottom: 2em;
+    font-family: "Roboto", sans-serif;
+    font-size: em(18);
+    text-align: right;
+  }
+}
+q {
+  display: inline-block;
+  width: auto;
+  margin:0 ;
+  &:before, &:after {
+    font-size: em(16);
+    position: static;
+  }
+  &:before {
+    padding-right: .33em;
+  }
+  &:after {
+    padding-left: .33em;
+  }
+}
+
+table {
+  line-height: 1.2;
+  margin-bottom: 2em;
+}
+thead {
+  background-color: $blue;
+  color: $white;
+}
+th, td {
+  padding: .5em;
+}
+tr:nth-child(even) {
+  background: $grey--light;
+}
+
+address {
+  line-height: 1.33;
+  padding-left: 1em;
+  border-left: 4px solid $blue;
+}
+
+pre {
+  @include bdr();
+  padding: 1em;
+}

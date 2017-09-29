@@ -1,0 +1,98 @@
+.btn-default, .btn-dark, .btn-outline, .btn-outline-grey, input[type=submit], input[type=button], .comment-form input[type=submit] {
+  padding: em(14) em(26);
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-size: em(15);
+  font-weight: 500;
+  border-radius: em(20/6) em(20);
+}
+a.btn, a.btn:hover, a.btn-default, a.btn-outline, a.btn-dark, a.btn-outline-grey {
+  text-decoration: none;
+}
+input[type=submit], input[type=button] {
+  outline: none;
+  border: none;
+  // line-height: 0; commented becasue of contact form
+}
+.btn-rev {
+  border-radius: em(20) em(20/4);
+}
+.btn-default {
+  color: $white;
+  background-color: $blue--btn--light;
+}
+.btn-dark, input[type=submit], input[type=button], .comment-form input[type=submit] {
+  color: $white;
+  background-color: $blue--dark;
+  &:hover {
+    color: $blue--bright;
+  }
+}
+.btn-outline {
+  color: $blue--dark;
+  @include bdr($color: $blue--dark);
+  &:hover {
+    color: $blue--bright;
+    border-color: $blue--bright;
+  }
+}
+.btn-outline-grey {
+  color: $grey;
+  @include bdr($color: $grey);
+  &:hover {
+    color: $blue--bright;
+    border-color: $blue--bright;
+  }
+}
+
+.comment-form input[type=submit] {
+  border: none;
+  line-height: .8;
+}
+.section--blue .btn-outline, .service .btn-outline, .banner .btn-outline {
+  color: $white;
+  @include bdr($color: $white);
+}
+
+.social-icon {
+  display: inline-block;
+  width: em(45, 20);
+  height: em(45, 20);
+  margin: em(22, 20) em(22, 20);
+  text-align: center;
+  font-size: em(20);
+  line-height: em(45, 20);
+  border-radius: 100%;
+  border: 2px solid $blue--text;
+  &:hover {
+    color: $blue--light;
+    border-color: $blue--light;
+  }
+}
+.facebook-icon {
+  color: #4D76BA;
+  border-color: #4D76BA;
+}
+.twitter-icon {
+  color: #30C5F4;
+  border-color: #30C5F4;
+}
+.google-icon {
+  color: #F15649;
+  border-color: #F15649;
+}
+.linkedin-icon {
+  color: #0F86C8;
+  border-color: #0F86C8;
+}
+.pinterest-icon {
+  color: #EF3C3B;
+  border-color: #EF3C3B;
+}
+.instagram-icon {
+  color: #000;
+  border-color:#000;
+}
+.fa-sliders {
+  transform: rotate(90deg);
+}

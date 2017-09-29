@@ -7,6 +7,22 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-alpha.6"
+    "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-alpha.6",
+    "font-awesome": "fontawesome#^4.7.0",
+    "fullpage.js": "^2.9.4",
+    "infinite-scroll": "^3.0.1"
+  },
+  "overrides": {
+    "font-awesome": {
+      "main": [
+        "./scss/font-awesome.scss",
+        "./fonts/*"
+      ]
+    },
+    "infinite-scroll": {
+      "main": [
+        "./dist/infinite-scroll.pkgd.js"
+      ]
+    }
   }
 }

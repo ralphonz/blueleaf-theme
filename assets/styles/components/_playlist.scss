@@ -1,0 +1,59 @@
+.main {
+  .wp-playlist {
+    border: none;
+    background: transparent;
+    
+    @include media-breakpoint-down(md) {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .wp-playlist-tracks {
+    overflow: hidden;
+    @include bdr($grey);
+    @include leaf(2em);
+    @include heading();
+    color: $blue;
+    background: $white;
+
+    .wp-playlist-item {
+      padding: .75em;
+    }
+  }
+
+  .wp-playlist-light .wp-playlist-caption {
+    font-size: em(17);
+    color: $blue;
+  }
+  .wp-playlist-item-title {
+    font-size: em(17, 17);
+    @include media-breakpoint-up(xl) {
+      font-size: em(27, 27);
+    }
+  }
+  .wp-playlist-item-length {
+    right: .75em;
+    top: .87em;
+    font-size: em(17);
+
+    @include media-breakpoint-up(lg) {
+      top: .5em;
+      font-size: em(27);
+    }
+  }
+  .wp-playlist-light .wp-playlist-playing {
+    font-weight: 100;
+    color: $blue;
+    .wp-playlist-item-title:after {
+      content: "\f04b";
+      font-size: 14px;
+      font-family: FontAwesome;
+      padding-left: 1em;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+.page-template-template-contact {
+  .content {
+    padding-left: em(20);
+    padding-right: em(20);
+
+    @include media-breakpoint-up(lg) {
+      padding-left: em(80);
+      padding-right: em(80);
+    }
+  }
+  h2 {
+    width: auto;
+    margin: em(40, 72) em(10, 72);
+    @include media-breakpoint-up(lg) {
+      width: 4.4em;
+      margin: em(64, 72) auto;
+    }
+  }
+  .map {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    z-index: 9;
+    background: $white;
+
+    @include media-breakpoint-up(md) {
+      width: 95%;
+      margin-left: 5%;
+    }
+
+    p {
+      margin: 0;
+      padding: em(20);
+      text-align: center;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: calc(100vh - 144px);
+    }
+  }
+
+  .contact-form {
+    @include media-breakpoint-up(md) {
+      position: fixed;
+      top: em(60);
+      right: 0;
+      width: calc(50% - 1.25em);
+      height: calc(100vh - 60px);
+      overflow: scroll;
+      z-index: 2;
+      margin-top: 0;
+      margin-right: 0;
+      padding-top: em(15);
+      background: $blue--dark;
+      animation: slideInFromRight 1s ease-out;
+
+      input {
+        background-color: $blue--dark;
+        border: none;
+        color: $blue--bright;
+        &::placeholder {
+          color: $white;
+        }
+      }
+      input[type="submit"], input[type="button"] {
+        color: $white;
+        cursor: pointer;
+        transition: background-color .5s ease-out;
+
+        &:hover {
+          background-color: $blue;
+        }
+      }
+      textarea {
+        height: em(300, 30);
+        background-color: $blue--dark;
+        @include bdr($blue);
+        color: $blue--bright;
+        &::placeholder {
+          color: $white;
+        }
+      }
+
+      .nf-error-required-error {
+        color: $blue--bright;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-top: em(50)
+;    }
+  }
+}
+
+.contact-info .social-networks {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: em(60) 0;
+
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    // margin: 0 em(40) em(40);
+  }
+
+  .social-icon {
+    display: block;
+    margin: 0 8.67% em(20);
+    color: $blue;
+    border-color: $blue;
+
+    @include media-breakpoint-up(sm) {
+      margin: 0;
+    }
+  }
+}
+.contact-info .large-paragraph {
+  margin-bottom: 1.5em;
+}
+
+a.phone-link {
+  text-decoration: none;
+}

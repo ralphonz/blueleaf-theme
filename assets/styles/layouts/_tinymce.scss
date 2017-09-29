@@ -1,3 +1,19 @@
 body#tinymce {
   margin: 12px !important;
+  background: $white;
+
+  p {
+    margin-bottom: em(40);
+  }
+  .btn {
+    -webkit-user-select: auto; /* Chrome, Opera, Safari */
+       -moz-user-select: auto; /* Firefox 2+ */
+        -ms-user-select: auto; /* IE 10+ */
+            user-select: auto; /* Standard syntax */
+  }
+  .section--blue {
+    h3 {
+      line-height: 1.2;
+    }
+  }
 }

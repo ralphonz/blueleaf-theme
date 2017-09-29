@@ -111,7 +111,8 @@ var cssTasks = function(filename) {
       ]
     })
     .pipe(cssNano, {
-      safe: true
+      safe: true,
+      minifyFontValues: { removeQuotes: false }
     })
     .pipe(function() {
       return gulpif(enabled.rev, rev());

@@ -1,0 +1,35 @@
+@import "common/variables";
+
+body {
+  background-color: $blue--dark;
+}
+.login #login {
+  h1 a {
+    background-image: url('../images/logo.svg');
+  }
+  .message {
+    border-radius: 15px 3px;
+    background-color: $blue;
+    color: $white;
+  }
+  form {
+    border-radius: 25px 5px;
+
+    .button-primary {
+      background-color: $blue;
+      border-color: $blue2;
+      border-radius: 15px 3px;
+    }
+
+    input[type="text"], input[type="password"] {
+      border-radius: 15px 3px;
+      padding-left: 0.5em;
+    }
+    .forgetmenot {
+      margin-top: 6px;
+    }
+  }
+  #nav a, #backtoblog a {
+    color: $white;
+  }
+}

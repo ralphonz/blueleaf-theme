@@ -18,10 +18,33 @@
       ]
     },
     "jquery.js": {
-      "bower": ["jquery"]
+      "bower": [
+        "jquery"
+      ]
+    },
+    "modernizr.js": {
+      "files": [
+        "scripts/modernizr.js"
+      ]
+    },
+    "fullpage.js": {
+      "bower": [
+        "fullpage.js"
+      ]
+    },
+    "infinite-scroll.js": {
+      "bower": [
+        "infinite-scroll"
+      ]
+    },
+    "login.css": {
+      "files": [
+        "styles/login.scss"
+      ],
+      "main": true
     }
   },
   "config": {
-    "devUrl": "http://example.dev"
+    "devUrl": "http://blueleafrecordingstudio.dev"
   }
 }

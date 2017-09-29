@@ -1,0 +1,51 @@
+@mixin heading {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  line-height: 1.2;
+  color: $blue--text;
+}
+
+@mixin bdr-btm($color: $blue--text) {
+  border-bottom: 1px solid $color;
+}
+@mixin bdr-tp($color: $blue--text) {
+  border-top: 1px solid $color;
+}
+@mixin bdr-l($color: $blue--text) {
+  border-left: 1px solid $color;
+}
+@mixin bdr-r($color: $blue--text) {
+  border-right: 1px solid $color;
+}
+@mixin bdr($color: $blue--text) {
+  border: 1px solid $color;
+}
+
+@mixin leaf($radius: 25%, $denominator: 8) {
+  border-radius: $radius/$denominator $radius;
+}
+@mixin leafrev($radius: 25%, $denominator: 8) {
+  border-radius: $radius $radius/$denominator;
+}
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$large-screen-width: 1240px;
+
+@mixin tablet {
+  @media only screen and (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media only screen and (min-width: $large-screen-width) {
+    @content;
+  }
+}

@@ -1,12 +1,11 @@
 // Grid system
-.main {
+.main, .home .main {
   @include make-col-ready();
   @include media-breakpoint-up(sm) {
     @include make-col($main-sm-columns);
-    .sidebar-primary & {
-      @include make-col($main-sm-columns - $sidebar-sm-columns);
-    }
   }
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 .sidebar {
   @include make-col-ready();

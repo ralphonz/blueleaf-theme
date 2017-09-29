@@ -1,1 +1,33 @@
+body {
+  font-family:  'Helvetica', Arial, sans-serif;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  color: $blue--text;
+  background: $blue--dark;
+}
+.wrap {
+  margin-top: em(60);
+  background: $white;
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0.1em;
 
+  @include media-breakpoint-up(md) {
+    margin-top: 0;
+    padding-left: 5%;
+  }
+}
+.content {
+  padding: 0 em(20);
+}
+@include media-breakpoint-up(lg) {
+  .content, .services, .welcome-content {
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
+}
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important;
+}

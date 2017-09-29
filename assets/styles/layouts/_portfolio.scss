@@ -1,0 +1,405 @@
+.single-portfolio {
+  @include media-breakpoint-down(md) {
+    .page-header {
+      margin-bottom: 0;
+      .btn {
+        display: none;
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    .media-container {
+      margin-top: em(60);
+    }
+    article footer .buttons a:first-of-type {
+        margin-right: 1em;
+      }
+  }
+
+  .portfolio-slide-gallery {
+    width: 100%; 
+    overflow: hidden; 
+    // padding: 10vw;
+    background-color: $grey--light;
+    @include bdr-btm($grey);
+
+    @keyframes slidy {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: -400%; }
+    }
+    * {
+      box-sizing: border-box;
+    }
+    figure { 
+      background: $grey--light;
+
+      @include media-breakpoint-up(md) {
+        padding: 2.5vw 0;
+      }
+    }
+    .gallery { 
+      display: block;
+      position: relative; 
+      width: 5000%;
+      font-size: 0; 
+      animation: 30s slidy infinite; 
+    }
+    .gallery .gallery-item {
+      display: inline-block;  
+      position: inherit;  
+      width: 100vw;
+      max-width: 100%;
+      height: auto;
+      overflow: hidden;
+      text-align: center;
+
+      @include media-breakpoint-up(md) {
+        width: 95vw; 
+      }
+    }
+    .gallery img {
+      display: block;
+      margin: auto; 
+      width: auto; 
+      height: 100vw;
+      border-radius: 0;
+
+      position: relative;
+      left: 50%;
+      transform: translate(-50%, 0%);
+
+      @include media-breakpoint-up(md) {
+        height: 75vh;
+      }
+
+    }
+    .gallery figure figcaption { 
+      position: absolute; 
+      bottom: 0;
+      background: rgba(0,0,0,0.4);
+      color: #fff; 
+      width: 100%;
+      font-size: 2rem; 
+      padding: .6rem; 
+    }
+  }
+  .project-title {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+      margin-bottom: 0;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      text-align: center;
+    }
+  }
+  .portfolio-playlist {
+    padding: em(20) 7.5% 0;
+    background: $grey--light;
+    // @include bdr-btm($grey);
+    
+    .wp-playlist-tracks {
+      @include media-breakpoint-down(md) {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      } 
+    }
+    
+
+    @include media-breakpoint-up(md) {
+      padding: em(20) 7.5%;
+    }
+
+    .wp-playlist-current-item {
+      display: none;
+    }
+  }
+  .project-meta {
+    padding: 0 7.5% em(20);
+    background: $grey--light;
+    @include bdr-btm($grey);
+  }
+  .project-styles, .project-attributes {
+    padding: 1em;
+    text-align: center;
+    background-color: $white;
+    
+    @include bdr($grey);
+    border-top: none;
+  }
+  .project-styles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    .btn {
+      margin-bottom: 0;
+      font-size: em(12);
+      padding: .5em .67em
+    }
+  }
+  .project-attributes {
+    display: flex;
+    justify-content: space-around;
+    border-bottom-left-radius: 2em;
+    .fa {
+      font-size: em(20);
+    }
+  }
+  article.portfolio {
+    header {
+      h2 {
+        font-size: em(41);
+        .subtitle {
+          display: block;
+          margin-bottom: .25em;
+          font-size: em(18, 41);
+        }
+      }
+    }
+    header h2, footer {
+      margin: em(40, 72) 5%;
+      @include media-breakpoint-up(md) {
+        margin: em(40, 72) 12.5%;
+      }
+    }
+    footer {
+      @include bdr-tp($grey);
+      margin-top: em(30);
+      margin-bottom: em(20);
+      padding-top: em(20);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include media-breakpoint-down(md) {
+        flex-wrap: wrap;
+        .buttons {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          padding-top: 1.25em;
+          @include bdr-tp($grey);
+        }
+      }
+      @include media-breakpoint-up(md) {
+        margin-top: em(60);
+        margin-bottom: em(40);
+      }
+    }
+    .types {
+      width: 100%;
+      margin-bottom: em(15);
+      @include bdr-btm($grey);
+      color: $grey;
+      a {
+        color: $grey;
+      }
+    }
+    .share  {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include media-breakpoint-down(md) {
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 1.25em;
+      }
+      @include media-breakpoint-up(md) {
+        padding-right: em(40);
+      }
+      p {
+        width: 100%;
+        margin-bottom: 0;
+        font-size: em(20);
+        @include media-breakpoint-up(md) {
+          width: auto;
+          display: inline-block;
+        }
+      }
+      .social-icon {
+        width: em(30);
+        height: em(30);
+        line-height: 1.75em;
+        border-color: $blue;
+        color: $blue;
+        margin: 0;
+        @include media-breakpoint-up(md) {
+          margin: em(10);
+        }
+      }
+    }
+  }
+}
+
+.post-type-archive-portfolio, .archive.tax-attribute, .archive.tax-style, .archive.tax-type {
+  .page-header {
+    margin-bottom: 0;  
+  }
+
+  @include media-breakpoint-up(md) {
+    .main {
+      height: 100vh;
+    }
+  }
+
+  .portfolio {
+    padding-bottom: em(10);
+    background: $grey--light;
+    @include bdr-btm($grey);
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    @include media-breakpoint-up(md) {
+      width:90vw;
+      padding-bottom: 0;
+      border-bottom: none;
+      // margin-top:0;
+    }
+    @include media-breakpoint-up(md) {
+      .fp-tableCell {
+        display: flex;
+        flex-wrap: wrap;
+        padding: em(71) em(10) em(10);
+      }
+    }
+    header {
+      padding-left: em(10);
+      padding-right: em(10);
+      text-align: center;
+      h2 {
+          margin: 0;
+          padding: .5em 0 .25em;
+          font-size: em(40);
+          border-bottom: none;
+          .subtitle {
+            display: block;
+            font-size: em(18, 40);
+          }
+        }
+        a.btn-outline-grey {
+          display: inline-block;
+          padding: em(10) em(20); 
+          background-color: $white;
+        }
+        time {
+          display: block;
+          margin-top: .5em;
+          padding-right: 4px;
+          color: $grey;
+          font-style: italic;
+          font-size: em(12);
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+
+      header {
+        width:100%;
+        align-self: flex-start;
+        padding-left: 0;
+        padding-right: 0;
+        h2 {
+          float:left;
+          padding-top: 0;
+          padding-left: em(10, 40);
+        }
+        a.btn-outline {
+          float: right;
+        }
+        time {
+          float: right;
+          clear: right;
+        }
+      }
+    }
+
+    .content {
+      position: relative;
+      width: 100%;
+      text-align: center;
+
+      @include media-breakpoint-down(md) {
+        padding-top: .5em;
+        padding-left: .625em;
+        padding-right: .625em;
+      }
+
+      @include media-breakpoint-up(md) {
+        align-self: center;
+        margin-top: em(-18);
+
+        .project-thumb {
+          max-height: 37vmax;
+          width: auto;
+        }
+      }
+
+      .project-thumb {
+        display: block;
+        height: 90vw;
+        overflow: hidden;
+        @include leaf(10vh);
+         img {
+          width:100%;
+          height: auto;
+          min-height:100%;
+          object-fit: cover;
+         }
+      }
+      
+    }
+    footer {
+      position: relative;
+      width: 100%;
+      align-self: flex-end;
+      padding: em(10);
+      h3 {
+          width: 100%;
+          text-align: center;
+          font-family:  'Helvetica', Arial, sans-serif;
+          font-size: em(12);
+          color: $grey--dark;
+
+          .genres a, .genres {
+            color: $grey;
+            font-style: italic;
+          }
+
+         @include media-breakpoint-up(md) {
+          position: absolute;
+          transform: translate(0%,-110%);
+        }
+      }
+    }
+  }
+  #fp-nav {
+    width: 5%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #FAFAFA;
+    height: 100vh;
+    @include bdr-l($grey);
+    display: flex;
+    align-items: center;
+    margin-top: 0 !important;
+    z-index: 0;
+    ul {
+      width: 100%;
+      li {
+        margin: 7px auto;
+      }
+    }
+  }
+}

@@ -17,3 +17,55 @@
   @extend .btn;
   @extend .btn-secondary;
 }
+
+
+.comment {
+  padding: .75em;
+  .comment-author b {
+    @include heading;
+    font-size: em(20);
+  }
+  .comment-metadata a {
+    margin-bottom: .5em;
+    font-size: em(12);
+    font-style: italic;
+    color: $grey;
+  }
+  &.even {
+    background: $grey--light;
+  }
+  .reply {
+    margin-bottom: .5em;
+    a {
+      @extend .btn-default;
+      font-size: em(12);
+    }
+  }
+  .children {
+    margin-top: 1em;
+    padding-left: 0em;
+    .alt {
+      background-color: $white;
+    }
+  }
+}
+
+#comments {
+  width: 100vw;
+  margin-top: 2.5em;
+  margin-left:-1.25em ;
+  padding: 1.25em;
+  @include bdr-tp();
+}
+
+#respond {
+  margin-top: 1.25em;
+  padding-top: 1.25em;
+  @include bdr-tp();
+  #reply-title {
+    margin-bottom: 0.75em;
+  }
+  .comment-notes {
+    display: none;
+  }
+}
