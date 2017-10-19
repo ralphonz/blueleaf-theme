@@ -1,6 +1,6 @@
 <div class="services">
   <div class="service service-1">
-    <a href="<?php the_field('service_1_link'); ?>"><h2 class="service-heading"><?php the_field('service_1_name'); ?></h2></a>
+    <a class="service-heading-link" href="<?php the_field('service_1_link'); ?>"><h2 class="service-heading"><?php the_field('service_1_name'); ?></h2></a>
     <div class="service-content">
       <h3><i class="fa <?php the_field('service_1_icon'); ?>"></i><?php the_field('service_1_title'); ?></h3>
       <?php the_field('service_1_content'); ?>

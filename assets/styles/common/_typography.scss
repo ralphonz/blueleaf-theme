@@ -84,6 +84,14 @@ h3, h4 {
     text-decoration: underline;
   }
 
+  p {
+    margin-bottom: 1.5em;
+
+    @include media-breakpoint-down(md) {
+      line-height: 1.75;
+    }
+  }
+
   @include media-breakpoint-up(lg) {
     h2:not(.subtitle) {
       margin-top: em(30);
@@ -100,7 +108,7 @@ h3, h4 {
   }
 }
 
-blockquote, q {
+.content blockquote, .content q, {
   position: relative;
   margin-top: 1em;
   margin-bottom: 2em;
@@ -110,7 +118,11 @@ blockquote, q {
   text-align: justify ;
   hyphens: auto;
   quotes: "“" "”" "‘" "’";
- 
+  
+  p {
+    line-height: 1.5;
+  }
+
   &:before, &:after {
     position: absolute;
     top: em(10, 32);

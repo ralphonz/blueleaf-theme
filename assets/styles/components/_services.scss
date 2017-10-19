@@ -1,6 +1,6 @@
 .services {
-  padding-left: em(32);
-  padding-right: em(32);
+  padding-left: em(16);
+  padding-right: em(16);
   padding-bottom: em(32);
   color: $white;
   background: rgb(0,0,0); /* Old browsers */
@@ -13,7 +13,8 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin-top: calc(75vh - 210px);
+    padding-left: em(32);
+    padding-right: em(32);
     padding-bottom: em(60);
   }
 
@@ -24,16 +25,19 @@
     width:  auto;
     display: table;
     margin: 0 auto 16px;
-    padding: 0.67em 0.5em;
+    padding: 0.5em;
     line-height: 1;
     background: rgba(0,0,0,.3);
     @include bdr($white);
-    @include leafrev($radius: 1em);
+    @include leaf($radius: .75em);
 
     @include media-breakpoint-up(md) {
+      margin-bottom: em(20, 32);
       font-size: em(32);
-      margin-bottom: em(30, 32);
     }
+  }
+  .service-heading-link {
+    display: block;
   }
 }
 
@@ -62,7 +66,7 @@
   }
 
   h3 {
-    padding: 1em 25% 0.5em;
+    padding: 1em 7% 0.5em;
     text-align: center;
     line-height: 1.5;
     font-size: em(21);
@@ -72,8 +76,6 @@
     @include media-breakpoint-up(md) {
       flex-grow: 1;
       font-size: em(26);
-      padding-left: 7%;
-      padding-right: 7%;
     }
 
     .fa {
@@ -111,6 +113,7 @@
       @include media-breakpoint-up(md) {
         width: auto;
         font-size: em(11);
+        padding:.875em;
       }
     }
   }

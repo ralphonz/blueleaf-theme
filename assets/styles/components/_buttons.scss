@@ -28,7 +28,7 @@ input[type=submit], input[type=button] {
     color: $blue--bright;
   }
 }
-.btn-outline {
+.btn-outline, a.btn-outline {
   color: $blue--dark;
   @include bdr($color: $blue--dark);
   &:hover {

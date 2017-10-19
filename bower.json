@@ -10,7 +10,8 @@
     "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-alpha.6",
     "font-awesome": "fontawesome#^4.7.0",
     "fullpage.js": "^2.9.4",
-    "infinite-scroll": "^3.0.1"
+    "infinite-scroll": "^3.0.1",
+    "slick-carousel": "^1.8.1"
   },
   "overrides": {
     "font-awesome": {

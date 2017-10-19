@@ -22,6 +22,20 @@
     margin-bottom: em(100);
   }
 
+  .btn {
+    margin-top: 1.5em;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+      margin-top: 0;
+      margin-bottom: 1.5em;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   a {
     color: $blue--light;
 
@@ -58,9 +72,6 @@
   @include media-breakpoint-down(sm) {
     .text-right-not-sm, .text-left-not-sm {
       text-align: center;
-      .btn {
-        margin-bottom: em(30);
-      }
       &:last-of-type {
         margin-bottom: 0;
       }
@@ -106,6 +117,7 @@
     width: 2.7em;
     margin: em(64, 72) auto;
     padding-bottom: 0;
+    padding-top: 0;
     font-size: 3.75em;
     letter-spacing: -.07em;
     text-align: left;

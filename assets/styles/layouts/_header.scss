@@ -12,8 +12,8 @@
     width: 5%;
     height: 100%;
     padding-top: 0;
-
     animation: slideDown 1s .3s ease-out;
+    transition: width .5s;
   }
 
   .container {
@@ -100,7 +100,8 @@ path {
     padding: em(10) 0;
 
     @include media-breakpoint-up(md) {
-      padding: 0;
+      padding: .625em 0 .625em 1.25vw;
+      text-align: left;
     }
   }
   a {
@@ -113,9 +114,16 @@ path {
 
     @include media-breakpoint-up(md) {
       visibility: collapse;
+      white-space: nowrap;
+      transition: visibility .5s;
+      color: rgba(255,255,255,0);
+      transition: color .5s;
 
       .fa {
+        width: 2vw;
         visibility: visible;
+        margin-right: 0;
+        color: $white;
       }
     }
 
@@ -131,4 +139,33 @@ path {
     display: block;
     transition: color .2s cubic-bezier(0.29, 0.49, 0.62, 0.29)
   }
+}
+
+//Pop-out menu
+@include media-breakpoint-up(md) {
+  .banner:hover {
+      width: 15vw;
+      .navbar-brand {
+        padding-bottom: .25em;
+      }
+      #menu-primary-navigation {
+        li {
+          // padding-left: 8.333333%;
+        }
+        a {
+          visibility: visible;
+          color: $white;
+          transition: color .5s, visibility .7s;
+          &:hover {
+            color: $blue--light;
+            .fa {
+              color: $blue--light;
+            }
+          }
+          .fa {
+            margin-right: 1em;
+          }
+        }
+      }
+    }
 }

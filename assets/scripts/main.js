@@ -25,6 +25,11 @@
           $('.map').slideToggle();
         });
 
+        $('.portfolio-slide-gallery .gallery').slick({
+          nextArrow: '.next-slide',
+          prevArrow: '.prev-slide'
+        });
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -94,7 +99,7 @@
 
         container.on('append.infiniteScroll', function(event, response, path, items){
             $('audio').mediaelementplayer();
-            if (typeof fullpage == 'function') { 
+            if ( $( 'html' ).hasClass( 'fp-enabled' )) {
               $.fn.fullpage.destroy('all');
               container.fullpage({
                 sectionSelector: '.portfolio',
@@ -103,7 +108,6 @@
             }
         })
         container.on( 'last.infiniteScroll', function( event, response, path ) {
-          console.log('last'+path)
           $('.post-end').show();
         });
       }

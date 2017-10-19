@@ -26,7 +26,7 @@
       $genres = get_terms( 'style' );
     ?>
 
-    <h3 class="audio-track-title"><?php echo $media[0]->post_title; ?> <span class="genres">- <?php foreach ($genres as $genre) { ?>
+    <h3 class="audio-track-title"><?php echo $media[0]->post_title; ?> <span class="genres"><span class="genre-sep">-</span><?php foreach ($genres as $genre) { ?>
       <a href="<?php echo get_term_link($genre->term_id); ?>"><?php echo $genre->name; ?></a>, 
     <?php } ?></span></h3>
 

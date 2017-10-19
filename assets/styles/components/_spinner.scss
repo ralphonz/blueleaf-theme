@@ -12,6 +12,20 @@
     text-transform: uppercase;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
+
+    @include media-breakpoint-up(md) {
+      margin-right: .5em;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    top: 0;
+    right: 0.5em;
+    z-index: 9;
+    padding-bottom: 0;
+    padding-top: .33em;
+    border-top: none;
   }
 }
 
@@ -20,6 +34,12 @@
   width: 30px;
   height: 30px;
   position: relative;
+
+  @include media-breakpoint-up(md) {
+    display: inline-block;
+    top: .5em;
+    float: right;
+  }
 }
 
 .sk-fading-circle .sk-circle {

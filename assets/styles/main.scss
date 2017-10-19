@@ -7,6 +7,7 @@
 // bower:scss
 @import "../../bower_components/bootstrap/scss/bootstrap.scss";
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
+@import "../../bower_components/slick-carousel/slick/slick.scss";
 // endbower
 
 @import "common/global";
@@ -21,6 +22,7 @@
 @import "components/wp-classes";
 @import "components/mediaelement";
 @import "components/spinner";
+@import "components/slick-theme";
 @import "layouts/header";
 @import "layouts/hero";
 @import "layouts/sidebar";

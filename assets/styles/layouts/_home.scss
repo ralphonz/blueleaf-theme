@@ -1,6 +1,11 @@
 .home {
   background-color: $black;
   position: relative;
+  .main {
+    @include media-breakpoint-up(md) {
+      padding-top: calc(75vh - 210px);
+    } 
+  }
   .banner {
     position: absolute;
     color: $white;
@@ -49,25 +54,30 @@
 
     @include media-breakpoint-up(md) {
       padding-left: 0;
-      padding-top: em(100);
+      padding-top: em(140);
     }
   }
-  .page-header h1 {
-    z-index: 9;
-    border-bottom: none;
-    color: $white;
-    margin-left: 5%;
-    margin-right: 5%;
+  .page-header {
+    position: static;
+    h1 {
+      z-index: 9;
+      border-bottom: none;
+      color: $white;
+      margin-left: 5%;
+      margin-right: 5%;
 
-    @include media-breakpoint-up(md) {
-      position: static;
-      position: absolute;
-      left: 0;
-      right: 0;
-      background-color: transparent;
-      margin-left: 0;
-      margin-top: em(20, 45);
-      font-size: em(45);
+      @include media-breakpoint-up(md) {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin: 0;
+        padding-left: .75em;
+        padding-right: .75em;
+        font-size: em(42);
+        text-align: center;
+        background-color: transparent;
+      }
     }
   }
   .hero {
@@ -134,7 +144,6 @@
 
       @include media-breakpoint-up(md) {
         flex-direction: row;
-        flex-wrap: wrap;
         
         .content--group {
           flex: 0 0 80%;
@@ -180,11 +189,12 @@
       position: absolute;
       left: 0;
       right: 0;
-      top: 120px;
+      top: em(89);
       width: 90vw;
       min-height: calc(50vh - 160px);
-      margin-left: auto;
+      margin-bottom: em(20);
       margin-right: auto;
+      margin-left: auto;
       line-height: 2;
       font-size: 16px;
     }

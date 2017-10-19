@@ -3,6 +3,8 @@
   <?php if ( get_post_gallery() ) : ?>
     <div class="project-media portfolio-slide-gallery">
       <?php echo get_post_gallery(); ?>
+      <i class="fa fa-arrow-circle-right next-slide"></i>
+      <i class="fa fa-arrow-circle-left prev-slide"></i>
     </div>
   <?php endif; ?>
 
