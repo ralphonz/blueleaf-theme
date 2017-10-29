@@ -1,13 +1,5 @@
 .hero {
   @include bdr-btm();
-  
-  @include media-breakpoint-up(md) {
-    height: 50vw;
-    overflow: hidden;
-    perspective: 1;
-    padding-top: 60px;
-    animation: fadeIn 1s ease-out;
-  }
 
   .subtitle {
     position: absolute;
@@ -32,11 +24,18 @@
 
     }
   }
+
+  @include media-breakpoint-up(md) {
+    height: 95vmin;
+    overflow: hidden;
+    padding-top: 60px;
+  }
 }
 .hero-image {
+  display: block;
   width: 100%;
   height: auto;
-  animation: fadeIn .5s ease-in-out;
+  animation: fadeIn 1s ease-in;
 
   @include media-breakpoint-up(md) {
     position: fixed;
@@ -46,6 +45,25 @@
   padding-top: 0;
 
   @include media-breakpoint-up(md) {
+    margin: 2em;
     padding-top: 9.5vw;
+    padding-bottom: 4.5vw;
   }
+  @include media-breakpoint-up(lg) {
+    margin-top: 59px;
+  }
+}
+
+.jarallax {
+    position: relative;
+    z-index: 0;
+}
+.jarallax > .jarallax-img {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }

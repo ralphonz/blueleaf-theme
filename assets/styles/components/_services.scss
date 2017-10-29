@@ -3,20 +3,10 @@
   padding-right: em(16);
   padding-bottom: em(32);
   color: $white;
-  background: rgb(0,0,0); /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(12,48,57,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(12,48,57,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 7.5%, rgba(0,0,0,1) 13%,rgba(12,48,57,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#0c3039',GradientType=0 ); /* IE6-9 */
-
-  @include media-breakpoint-up(md) {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    padding-left: em(32);
-    padding-right: em(32);
-    padding-bottom: em(60);
-  }
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 7.5%, rgba(0,0,0,.75) 13%,rgba(12,48,57,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  opacity: 0;
+  animation: fadeIn 1s .5s ease-in;
+  animation-fill-mode: forwards;
 
   h1, h2, h3, h4 {
     color: $white;
@@ -39,8 +29,16 @@
   .service-heading-link {
     display: block;
   }
-}
 
+  @include media-breakpoint-up(md) {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-left: em(32);
+    padding-right: em(32);
+    padding-bottom: em(60);
+  }
+}
 .service {
   @include media-breakpoint-up(md) {
     display: flex;
@@ -52,18 +50,10 @@
     margin-right: em(20);
   }
 }
-
 .service-content {
   margin-bottom: 3em;
   background: $blue--light;
   @include leafrev($radius: 3.5em);
-
-  @include media-breakpoint-up(md) {
-    margin-bottom: 0;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
 
   h3 {
     padding: 1em 7% 0.5em;
@@ -110,12 +100,22 @@
     .btn {
       font-size: em(12);
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-only(md) {
         width: auto;
         font-size: em(11);
         padding:.875em;
       }
+      @include media-breakpoint-up(lg) {
+        font-size: em(14);
+      }
     }
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
   }
 }
 .service-2 .service-content{

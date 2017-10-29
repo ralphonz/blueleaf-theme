@@ -11,7 +11,8 @@
     "font-awesome": "fontawesome#^4.7.0",
     "fullpage.js": "^2.9.4",
     "infinite-scroll": "^3.0.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "jarallax": "^1.9.0"
   },
   "overrides": {
     "font-awesome": {
@@ -23,6 +24,11 @@
     "infinite-scroll": {
       "main": [
         "./dist/infinite-scroll.pkgd.js"
+      ]
+    },
+    "jarallax": {
+      "main": [
+        "./dist/jarallax.min.js"
       ]
     }
   }

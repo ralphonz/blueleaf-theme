@@ -58,7 +58,9 @@
       margin-right: 0;
       padding-top: em(15);
       background: $blue--dark;
-      animation: slideInFromRight 1s ease-out;
+      transform: translateX(-100vw);
+      animation: slideInFromRight .7s 1s ease-out;
+      animation-fill-mode: forwards;
 
       input {
         background-color: $blue--dark;

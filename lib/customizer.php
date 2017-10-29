@@ -39,6 +39,7 @@ function customize_social_icons( $wp_customize ) {
       'url'   => 'https://facebook.com/',
       'transport' => 'postMessage',
       'type' => 'option',
+      'sanitize_callback' => 'esc_url_raw',
     ]
   );
   $wp_customize->add_setting( 'twitter_url', 
@@ -46,6 +47,7 @@ function customize_social_icons( $wp_customize ) {
       'url'   => 'https://twitter.com/',
       'transport' => 'postMessage',
       'type' => 'option',
+      'sanitize_callback' => 'esc_url_raw',
     ]
   );
   $wp_customize->add_setting( 'google_url', 
@@ -53,6 +55,7 @@ function customize_social_icons( $wp_customize ) {
       'url'   => 'https://google.com/',
       'transport' => 'postMessage',
       'type' => 'option',
+      'sanitize_callback' => 'esc_url_raw',
     ]
   );
   $wp_customize->add_setting( 'linkedin_url', 
@@ -60,6 +63,7 @@ function customize_social_icons( $wp_customize ) {
       'url'   => 'https://linkedin.com/',
       'transport' => 'postMessage',
       'type' => 'option',
+      'sanitize_callback' => 'esc_url_raw',
     ]
   );
   $wp_customize->add_setting( 'pinterest_url', 
@@ -67,6 +71,7 @@ function customize_social_icons( $wp_customize ) {
       'url'   => 'https://pinterest.com/',
       'transport' => 'postMessage',
       'type' => 'option',
+      'sanitize_callback' => 'esc_url_raw',
     ]
   );
   $wp_customize->add_setting( 'instagram_url', 
@@ -74,6 +79,7 @@ function customize_social_icons( $wp_customize ) {
       'url'   => 'https://instagram.com/',
       'transport' => 'postMessage',
       'type' => 'option',
+      'sanitize_callback' => 'esc_url_raw',
     ]
   );
 
@@ -148,6 +154,7 @@ function customize_contact_info( $wp_customize ) {
       'url'   => '',
       'transport' => 'postMessage',
       'type' => 'option',
+      'sanitize_callback' => 'esc_url_raw',
     ]
   );
 
@@ -183,6 +190,7 @@ function customize_post_display( $wp_customize ) {
       'url'   => '',
       'transport' => 'postMessage',
       'type' => 'option', 
+      'sanitize_callback' => __NAMESPACE__ . '\\sanitize_checkbox',
     ]
   );
 
@@ -197,3 +205,15 @@ function customize_post_display( $wp_customize ) {
   );
 }
 add_action( 'customize_register', __NAMESPACE__ . '\\customize_post_display' );
+
+
+/**
+ * Sanitize checkboxes
+ */
+function sanitize_checkbox( $input ) {
+  if ( $input == 1 ) {
+    return 1;
+  } else {
+    return '';
+  }
+}

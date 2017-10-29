@@ -7,12 +7,13 @@
   min-height: 60px;
   background-color:$blue--dark;
   padding: em(10) 0;
+  border: none;
 
   @include media-breakpoint-up(md) {
     width: 5%;
     height: 100%;
     padding-top: 0;
-    animation: slideDown 1s .3s ease-out;
+    animation: slideDown 1s ease-out;
     transition: width .5s;
   }
 
@@ -145,19 +146,15 @@ path {
 @include media-breakpoint-up(md) {
   .banner:hover {
       width: 15vw;
-      .navbar-brand {
-        padding-bottom: .25em;
-      }
+
       #menu-primary-navigation {
-        li {
-          // padding-left: 8.333333%;
-        }
         a {
           visibility: visible;
           color: $white;
           transition: color .5s, visibility .7s;
           &:hover {
             color: $blue--light;
+            transition: color .5s, visibility .7s;
             .fa {
               color: $blue--light;
             }

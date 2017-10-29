@@ -23,9 +23,10 @@ function body_class($classes) {
   }
 
   //Add {post_type}-archive class - for example, portfolio-archive if post type is portfolio and its an archive
-  global $post;
-  $classes[] = $post->post_type . '-archive';
-
+  if (is_archive()) {
+    global $post;
+    $classes[] = $post->post_type . '-archive';
+  }
 
   return $classes;
 }

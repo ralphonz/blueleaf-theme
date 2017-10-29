@@ -2,11 +2,8 @@
   padding: 0;
   background: $grey--light;
   @include bdr-tp($grey);
+
   @include media-breakpoint-up(md) {
-    // column-count: 2;
-    // column-width: 50%;
-    // column-gap: 0;
-    // column-rule: 1px solid $grey;
     display: flex;
     flex-wrap: wrap;
   }

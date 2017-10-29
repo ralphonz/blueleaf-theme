@@ -1,3 +1,5 @@
+<?php $contact_page_url = get_permalink(get_option('quick_contact_url')); ?>
+
 <header class="banner navbar navbar-default navbar-static-top" role="banner">
   <div class="container">
     <div class="navbar-header">
@@ -20,8 +22,6 @@
         endif;
         ?>
       </nav>
-      <?php $contact_page = get_option('quick_contact_url'); 
-      $contact_page_url = get_permalink($contact_page); ?>
       <a class="fa fa-envelope-o mobile-contact-link" href="<?= $contact_page_url ?>" aria-hidden="true"><span class="sr-only"><?= __('Contact Now', 'blueleaf'); ?></span></a>
     <?php } ?>
     <?php if (is_front_page()) { ?>

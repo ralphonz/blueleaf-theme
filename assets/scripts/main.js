@@ -113,7 +113,7 @@
       }
     },
     // Blog index page 
-    'post_archive': {
+    'blog': {
       init: function() {
 
         if($('.nav-links .nav-previous a').length > 0) {
@@ -128,6 +128,10 @@
         } else {
           $('.page-load-status').hide();
         }
+
+        container.on( 'last.infiniteScroll', function( event, response, path ) {
+          $('.post-end').show();
+        });
       }
     }
   };

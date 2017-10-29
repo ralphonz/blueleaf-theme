@@ -17,7 +17,16 @@
     .btn {
       display: block;
       margin-top: em(20);
+
+      @include media-breakpoint-up(md) {
+        margin: 1.25em auto 0;
+        width: 50%;
+      }
     }
+  }
+  .entry-content {
+    @extend .clearfix;
+    padding-bottom: em(32);
   }
   .mejs-container {
     margin-bottom: 1.5em;
@@ -25,6 +34,16 @@
   embed {
     max-width: 100%;
     height: auto;
+  }
+}
+.posts {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-top: em(60);
+    padding: .75em;
+    background-color: $grey--light;
   }
 }
 .blog, .post-archive {
@@ -35,27 +54,61 @@
     header {
       margin-bottom: 1.5em;
     }
+
+    @include media-breakpoint-up(md) {
+      flex-basis: 40%;
+      flex-grow: 1;
+      margin: .75em;
+      @include bdr($grey);
+      background-color: $white;
+      @include leaf(3.333em);
+    }
   }
   &>.post {
     padding-top: em(30);
   }
   .sticky {
     background: $grey--light;
-    padding-top: 1.25em;
-    position: relative;
-    top:-1.25em;
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 1.25em;
+      position: relative;
+      top:-1.25em;
+    }
+    @include media-breakpoint-up(md) {
+      flex-basis: 100%;
+      background-color: $blue;
+      border-color: $white;
+      color: $white;
+      .entry-title a {
+        color: $white;
+      }
+      time {
+        color: $blue--bright;
+      }
+    }
   }
   .entry-title {
     border-bottom: none;
+
+    @include media-breakpoint-up(md) {
+      text-align: center;
+      margin-bottom: 0;
+      a:hover { text-decoration: none; }
+    }
   }
 }
 .single-post {
   .post {
-    margin: em(60) em(20);
+    margin: em(60) em(20) 2em;
     padding-top: em(20);
 
     header {
       margin: em(20) em(20) em(60);
+    }
+    .tags {
+      padding-bottom: 1em;
+      color: $grey;
     }
     .categories {
       @include bdr-tp($grey);
@@ -65,8 +118,21 @@
         color: $grey;
       }
     }
+
+    @include media-breakpoint-up(md) {
+      margin-left: 16.5%;
+      margin-right: 16.5%;
+    }
   }
   .entry-title {
     margin-bottom: em(20, 36);
+  }
+}
+
+.post-format-gallery {
+  .wp-caption-text {
+    font-size: em(12);
+    font-style: italic;
+    padding-bottom: .5em;
   }
 }

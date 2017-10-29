@@ -13,15 +13,7 @@
   display: flex;
   flex-direction: column;
   break-inside: avoid-column;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-
-  @include media-breakpoint-up(md) {
-    display: inline-box;
-    margin: 0;
-  }
+  justify-content: space-between;
 
   img {
     width:100%;
@@ -29,19 +21,27 @@
     overflow: hidden;
     @include leaf($radius: 25%);
   }
-  
   .gallery-icon {
     order: 2;
   }
-  .wp-caption-text {
+  .wp-caption-text, .gallery-caption {
     order: 1;
-    margin-bottom: em(10);
     @include heading;
     font-size: em(28);
 
     @include media-breakpoint-up(md) {
       font-size: em(23);
     }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    display: inline-box;
+    margin: 0 auto em(30);
   }
 }
 

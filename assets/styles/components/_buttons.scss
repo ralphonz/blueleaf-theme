@@ -12,7 +12,6 @@ a.btn, a.btn:hover, a.btn-default, a.btn-outline, a.btn-dark, a.btn-outline-grey
 input[type=submit], input[type=button] {
   outline: none;
   border: none;
-  // line-height: 0; commented becasue of contact form
 }
 .btn-rev {
   border-radius: em(20) em(20/4);
@@ -21,7 +20,7 @@ input[type=submit], input[type=button] {
   color: $white;
   background-color: $blue--btn--light;
 }
-.btn-dark, input[type=submit], input[type=button], .comment-form input[type=submit] {
+.btn-dark, a.btn-dark, input[type=submit], input[type=button], .comment-form input[type=submit] {
   color: $white;
   background-color: $blue--dark;
   &:hover {

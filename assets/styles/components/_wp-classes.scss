@@ -50,8 +50,6 @@
 .wp-caption-text {
   @extend .figure-caption;
   padding: .75em;
-  // @include bdr-btm();
-  // border-bottom-left-radius: em(20);
 }
 
 // Text meant only for screen reader
@@ -82,6 +80,22 @@
     padding: .5em;
   }
 }
+.posts-navigation .nav-links {
+  @include bdr-tp($grey);
+  padding: 1em;
+  a {
+    @extend .btn-outline-grey;
+  }
+}
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  @include bdr-tp($grey);
+  padding-top: 2em;
+  a {
+    @extend .btn-outline-grey;
+  }
+}
 
 //post end
 
@@ -90,4 +104,12 @@
   text-align: center;
   padding: .5em;
   @include bdr-tp();
+
+  @include media-breakpoint-up(md) {
+    border-top-color: $grey;
+  }
+}
+
+.bypostauthor {
+  color: $grey;
 }

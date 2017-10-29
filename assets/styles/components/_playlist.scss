@@ -2,11 +2,8 @@
   .wp-playlist {
     border: none;
     background: transparent;
-    
-    @include media-breakpoint-down(md) {
-      padding: 0;
-      margin: 0;
-    }
+    margin: 0;
+    padding: 0;
   }
 
   .wp-playlist-tracks {
@@ -39,7 +36,7 @@
 
     @include media-breakpoint-up(lg) {
       top: .5em;
-      font-size: em(27);
+      font-size: em(20);
     }
   }
   .wp-playlist-light .wp-playlist-playing {
@@ -53,6 +50,7 @@
 
       @include media-breakpoint-up(lg) {
         font-size: 20px;
+        line-height: 0;
       }
     }
   }

@@ -24,4 +24,4 @@
     </div>
     <p><?php _e('Loading', 'blueleaf'); ?>...</p>
 </div>
- <div class="post-end"><?php _e('There are no more posts'); ?></div>
+ <div class="post-end"><?php _e('There are no more posts', 'blueleaf'); ?></div>

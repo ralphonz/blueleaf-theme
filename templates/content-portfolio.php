@@ -10,16 +10,16 @@
 
   <footer>
     <div class="types">
-      <?php _e('Related Categories', 'blueleaf');  
-      echo ': ';
+      <h3><?php _e('Related Categories', 'blueleaf'); ?>: </h3>  
+      <?php 
       $terms = get_the_terms( $post->ID , 'type' );
       if ($terms > 0) {
-        echo '<ul>';
+        echo '<ul class="nav">';
         foreach ( $terms as $term ) {
             $term_link = get_term_link( $term, 'type' );
             if( is_wp_error( $term_link ) )
             continue;
-        echo '<li><a href="' . $term_link . '">' . $term->name . '</a></li>';
+        echo '<li class="nav-item"><a class="btn btn-outline-grey" href="' . $term_link . '">' . $term->name . '</a></li>';
         }
         echo '</ul>';
       } 
@@ -28,8 +28,8 @@
     </div>
     <?php get_template_part('templates/content', 'sharing'); ?>
     <div class="buttons">
-      <a href="contact" title="contact" class="btn btn-default"><?php _e('Get A Quote', 'bl-portfolio'); ?></a>
-      <a href="buy" title="buy" class="btn btn-dark"><?php _e('Buy Tracks', 'bl-portfolio'); ?></a>
+      <a href="contact" title="contact" class="btn btn-default"><?php _e('Get A Quote', 'blueleaf'); ?></a>
+      <a href="buy" title="buy" class="btn btn-dark"><?php _e('Buy Tracks', 'blueleaf'); ?></a>
     </div>
   </footer>
   

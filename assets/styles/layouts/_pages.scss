@@ -89,7 +89,7 @@
 
 
 /************************ Bold Page Template and Contact Page Templates *****************************/
-.page-template-template-bold, .page-template-template-contact {
+.page-template-template-bold:not(#tinymce), .page-template-template-contact {
   .content {
     padding-left: em(40);
     padding-right: em(40);
@@ -98,6 +98,7 @@
 
     @include media-breakpoint-up(md) {
       margin-right: 50%;
+      margin-left:0;
     }
 
     @include media-breakpoint-up(lg) {
@@ -123,9 +124,6 @@
     text-align: left;
     border-bottom: none;
   }
-  .wp-caption-text {
-    // font-size: em(18);
-  }
   .section--blue {
     width: calc(100% + 80px);
     margin-left: -40px;
@@ -139,7 +137,9 @@
       overflow: scroll;
       z-index: 2;
       margin-top: 0;
-      animation: slideInFromRight 1s ease-out;
+      transform: translateX(-100vw);
+      animation: slideInFromRight .7s 1s ease-out;
+      animation-fill-mode: forwards;
     }
 
     @include media-breakpoint-up(lg) {
@@ -150,8 +150,36 @@
   }
   .footer .container-fluid {
     @include media-breakpoint-up(md) {
-      width:calc(50% + 1.25em);
+      width:calc(50% + 1.623em);
       margin-left: 0;
+    }
+  }
+}
+.error404 {
+  .main {
+    background-color: $blue2;
+    .heading404 {
+      font-size: 50vmin;
+      color: $white;
+      text-shadow: 10px 10px 10px rgba(0,0,0,.25)
+    }
+    .sub-heading404 {
+      text-align: center;
+      border-bottom: none;
+      color: $white;
+    }
+    .alert {
+      margin: 3em;
+      text-align: center;
+      background-color: $blue;
+      border-color: $blue--dark;
+      color: $white;
+    }
+    .search-form {
+      padding: 3em;
+      .input-group {
+        width: 75vw;
+      }
     }
   }
 }
