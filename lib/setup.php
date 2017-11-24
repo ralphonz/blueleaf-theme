@@ -127,14 +127,8 @@ function assets() {
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
-<<<<<<< HEAD
   wp_enqueue_style( 'googleFonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto:100,500');
   // wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), [ 'jquery' ], null, false);
-=======
-  wp_register_style('googleFonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto:100,500');
-  wp_enqueue_style( 'googleFonts');
-  wp_enqueue_script('sage/modernizr', Assets\asset_path('scripts/modernizr.js'), [], null, true);
->>>>>>> parent of bcffb68... 0.4 Move scripts to footer
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery', 'infiniteScroll'], null, true);
   wp_enqueue_script('fullPage', Assets\asset_path('scripts/fullpage.js'), ['jquery'], null, true);
   wp_enqueue_script('infiniteScroll', Assets\asset_path('scripts/infinite-scroll.js'), ['jquery'], null, true);
