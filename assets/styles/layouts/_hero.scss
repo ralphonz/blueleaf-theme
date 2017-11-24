@@ -1,4 +1,8 @@
 .hero {
+  width: 100%;
+  height: 95vmin;
+  overflow: hidden;
+  padding-top: 60px;
   @include bdr-btm();
 
   .subtitle {
@@ -21,32 +25,22 @@
       bottom: em(20, 46);
       padding: em(10, 46);
       font-size: em(46, 18);
-
     }
   }
 
   @include media-breakpoint-up(md) {
-<<<<<<< HEAD
     margin-bottom: 1em;
   }
   @include media-breakpoint-up(lg) {
     margin-bottom: 2em;
-=======
-    height: 95vmin;
-    overflow: hidden;
-    padding-top: 60px;
->>>>>>> parent of 4879d69... 0.3 Ready For Remote Testing
   }
 }
 .hero-image {
+  position: fixed;
   display: block;
   width: 100%;
   height: auto;
   animation: fadeIn 1s ease-in;
-
-  @include media-breakpoint-up(md) {
-    position: fixed;
-  }
 }
 .content.no-hero {
   padding-top: 0;
@@ -60,7 +54,6 @@
     margin-top: 59px;
   }
 }
-
 .jarallax {
     position: relative;
     z-index: 0;
