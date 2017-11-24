@@ -76,9 +76,6 @@
               }
             });
           }
-          $("#fp-nav").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
-               // $(this).addClass("donotanimate");
-          })
         }
 
         container.on('append.infiniteScroll', function(event, response, path, items){
