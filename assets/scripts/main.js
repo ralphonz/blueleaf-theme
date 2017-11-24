@@ -48,16 +48,6 @@
       init: function() {
         var container = $('#bl-full-page');
 
-        //fullPage JS only on larger screens
-        if (windowWidth > 768) {
-          if( container.length ) {
-            container.fullpage({
-              sectionSelector: '.portfolio',
-              navigation: true
-            });
-          }
-        }
-
         if($('.pagination .next').length > 0) {
           container.infiniteScroll({
             // options
@@ -71,20 +61,43 @@
           $('.page-load-status').hide();
         }
 
-        // jQuery
-        container.on( 'scrollThreshold.infiniteScroll', function( event ) {
-          console.log('Scroll at bottom');
-        });
+        //fullPage JS only on larger screens
+        if (windowWidth > 768) {
+          if( container.length ) {
+            container.fullpage({
+              sectionSelector: '.portfolio',
+              navigation: true,
+              afterLoad: function(anchorLink, index){
+              // Section indexes in fullpage start at 1
+                if(index === $('#bl-full-page .portfolio').length){
+                  container.infiniteScroll('loadNextPage');
+                }
+              }
+            });
+          }
+        }
 
         container.on('append.infiniteScroll', function(event, response, path, items){
             $('audio').mediaelementplayer();
+
             if ( $( 'html' ).hasClass( 'fp-enabled' )) {
+
+              //remembering the active section / slide
+              var activeSectionIndex = $('.fp-section.active').index();
+              var activeSlideIndex = $('.fp-section.active').find('.slide.active').index();
+
               $.fn.fullpage.destroy('all');
+
+              //setting the active section as before
+              $('.portfolio').eq(activeSectionIndex).addClass('active');
               container.fullpage({
                 sectionSelector: '.portfolio',
-                navigation: true
+                navigation: true,
+                // autoScrolling:false
               });
+
             }
+            // $.fn.fullpage.silentMoveTo('wonky-bonk-street')
         });
         container.on( 'last.infiniteScroll', function( event, response, path ) {
           $('.post-end').show();

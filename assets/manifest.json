@@ -27,7 +27,12 @@
         "styles/login.scss"
       ],
       "main": true
-    },
+    }
+  },
+  "config": {
+    "devUrl": "http://blueleafrecordingstudio.dev"
+  },
+  "unused": {
     "fullpage.js": {
       "bower": [
         "fullpage.js"
@@ -37,13 +42,7 @@
       "bower": [
         "infinite-scroll"
       ]
-    }
-  },
-  "config": {
-    "devUrl": "http://blueleafrecordingstudio.dev"
-  },
-  "unused": {
-    
+    },
     "jarallax.js": {
       "bower": [
         "jarallax"
