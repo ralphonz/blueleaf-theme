@@ -26,11 +26,11 @@ body {
   padding: 0 em(20);
   overflow: hidden;
 
-  // *:not(.page-template-template-bold .section--blue, .page-template-template-bold .section--blue *, .contact-form, .contact-form *) {
-  //   opacity: 0;
-  //   animation: fadeIn 1s 1s;
-  //   animation-fill-mode: forwards;
-  // }
+  *:not(.page-template-template-bold .section--blue, .page-template-template-bold .section--blue *, .contact-form, .contact-form *, #bl-full-page *) {
+    opacity: 0;
+    animation: fadeIn 1s 1s;
+    animation-fill-mode: forwards;
+  }
 
   &.contact-form  {
     opacity: 1;

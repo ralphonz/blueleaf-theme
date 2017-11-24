@@ -11,106 +11,87 @@
     overflow: hidden;
 
     .mejs-controls {
-      position: relative;
-      margin-top: 15px;
-      padding-left: 15px;
-      padding-right: 15px;
-      
-      .mejs-time {
-        color: $blue;
-      }
+      align-items: center;
+      height: 60px;
 
-      .mejs-button button {
-        position: relative;
-        background: none;
+        .mejs-button button {
+          background: none;
+          line-height:0;
+          height:28px;
 
-        &:after {
-          position:absolute;
-          top:8px;
-          left:0;
-          font-size: 20px;
-          font-family: FontAwesome;
+          &:after {
+            font-size: 20px;
+            font-family: FontAwesome;
+            color: $blue;
+
+          }
+        }
+        .mejs-play button:after {
+          content: "\f04b";
+        }
+        .mejs-pause button:after {
+          content: "\f04c";
+        }
+        .mejs-mute button:after {
+          content: "\f028";
+        }
+        .mejs-unmute button:after {
+          content: "\f026";
+        }
+        .mejs-time {
           color: $blue;
-
         }
-      }
-      .mejs-play button:after {
-        content: "\f04b";
-      }
-      .mejs-pause button:after {
-        content: "\f04c";
-      }
-      .mejs-mute button:after {
-        content: "\f028";
-      }
-      .mejs-unmute button:after {
-        content: "\f026";
-      }
-      .mejs-volume-button {
-        margin-left: 15px;
-      }
-      //Main time rail
-      .mejs-time-rail {
-        height: 20px;
-        padding-top: 8px;
-
-        span {
-          outline: none;
+        .mejs-replay button:after {
+          content: "\f049";
         }
-
-        .mejs-time-total, .mejs-time-loaded {
-          height: 5px;
-          border-radius: 5px;
-          background-color: $blue--dark;
-        }
-        .mejs-time-current {
-          height: 5px;
-          border-radius: 5px;
-          background-image:
-              linear-gradient(
-                to right, 
-                $blue--light, $blue
-              );
+        .mejs-time-rail {
+          span {
+            outline: none;
+          }
+          .mejs-time-total {
+            background-color: $blue--dark;
+            border-radius: 5px;
+          }
+          .mejs-time-loaded {
+            background-color: $blue2;
+            border-radius: 5px;
+          }
+          .mejs-time-current {
+            border-radius: 5px;
+          }
         }
         .mejs-time-handle {
           background-color: $blue;
           display: block;
           border: 2px solid #fff,;
           box-shadow: 0 0 0 1px #000, inset 0 0 0 1px #000;
-          width:12px;
-          height: 12px;
+          width:14px;
+          height: 14px;
           border-radius: 100%;
           top: -3px;
         }
         .mejs-time-handle-content {
           display: none;
         }
-      }
-      
-      //Volume control
-      .mejs-horizontal-volume-slider {
-        
+        .mejs-time-float {
+          border: none;
+          margin-bottom: 4px;
+          height: 16px
+        }
 
-        .mejs-horizontal-volume-total {
-          height: 5px;
-          border-radius: 5px;
-          background-color: $blue--dark;
+        //Volume control
+        .mejs-horizontal-volume-slider {
+          
+          .mejs-horizontal-volume-total {
+            top: 14px;
+            border-radius: 5px;
+            background-color: $blue--dark;
+          }
+          .mejs-horizontal-volume-current {
+            border-radius: 5px;
+            background-color: $blue;
+          }
         }
-        .mejs-horizontal-volume-current {
-          height: 5px;
-          border-radius: 5px;
-          background-color: $blue;
-        }
-        .mejs-horizontal-volume-handle {
-          background-color: $blue;
-          border: 2px solid #fff,;
-          box-shadow: 0 0 0 1px #000, inset 0 0 0 1px #000;
-          width:12px;
-          height: 12px;
-          border-radius: 100%;
-        }
-      }
     }
-
   }
 }

@@ -13,6 +13,16 @@
       .gallery-item {
         max-width: 100%;
         margin-bottom: 0;
+        padding: 0; 
+        .gallery-caption {
+          position: relative;
+          margin-top:-60px;
+          background: rgba(0, 0, 0, 0.5);
+          color: #fff;
+          width: 100%;
+          padding-left: 0;
+          padding-right: 0;
+        }
       }
       img {
         border-radius: 0;
@@ -241,9 +251,10 @@
 .post-type-archive-portfolio, .archive.tax-attribute, .archive.tax-style, .archive.tax-type {
   .wrap {
     background-color: $grey--light;
-    opacity: 0;
-    animation: fadeIn .5s;
-    animation-fill-mode: forwards;
+    // opacity: 0;
+    // animation: fadeIn .5s;
+    // animation-fill-mode: forwards;
+    // animation-iteration-count: 1;
   }
   .page-header {
     margin-bottom: 0;  
@@ -257,9 +268,10 @@
     padding-bottom: em(10);
     background: $grey--light;
     @include bdr-btm($grey);
-    opacity: 0;
-    animation: fadeIn 1s 1s;
-    animation-fill-mode: forwards;
+    // opacity: 0;
+    // animation: fadeIn 1s 1s;
+    // animation-fill-mode: forwards;
+    // animation-iteration-count: 1;
 
     &:last-of-type {
       border-bottom: none;
@@ -411,9 +423,10 @@
     }
   }
   #fp-nav {
-    transform: translateY(100vh);
-    animation: slideUp .7s 1s ease-in-out;
-    animation-fill-mode: forwards;
+    // transform: translateY(100vh);
+    // animation: slideUp .7s 1s ease-in-out;
+    // animation-fill-mode: forwards;
+    // animation-iteration-count: 1;
 
     @include media-breakpoint-up(md) {
       width: 5%;

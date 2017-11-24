@@ -48,14 +48,14 @@
       init: function() {
         var container = $('#bl-full-page');
 
+        $('audio').attr('data-keepplaying', '');
+
         if($('.pagination .next').length > 0) {
           container.infiniteScroll({
-            // options
             path: '.pagination .next',
             append: '.portfolio',
             hideNav: '.pagination',
             status: '.page-load-status',
-            debug: true,
           });
         } else {
           $('.page-load-status').hide();
@@ -76,6 +76,9 @@
               }
             });
           }
+          $("#fp-nav").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+               // $(this).addClass("donotanimate");
+          })
         }
 
         container.on('append.infiniteScroll', function(event, response, path, items){
