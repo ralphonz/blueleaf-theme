@@ -29,7 +29,10 @@
     <?php get_template_part('templates/content', 'sharing'); ?>
     <div class="buttons">
       <a href="contact" title="contact" class="btn btn-default"><?php _e('Get A Quote', 'blueleaf'); ?></a>
-      <a href="buy" title="buy" class="btn btn-dark"><?php _e('Buy Tracks', 'blueleaf'); ?></a>
+      <?php $releaseurl = get_field( 'release_url'); ?>
+      <?php if($releaseurl) { ?>
+      <a href="<?php echo $releaseurl; ?>" title="buy" class="btn btn-dark" target="_blank"><?php _e('Buy Tracks', 'blueleaf'); ?></a>
+      <?php } ?>
     </div>
   </footer>
   

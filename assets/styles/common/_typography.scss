@@ -44,6 +44,7 @@ h3, h4 {
       width: 95%;
       text-align: left;
       background-color: $white;
+      opacity:.95;
       transform: translateX(-100vw);
       animation: slideInFromLeft 1s .3s ease-out;
       animation-fill-mode: forwards;

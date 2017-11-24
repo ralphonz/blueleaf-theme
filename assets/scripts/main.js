@@ -21,10 +21,6 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
-        $('.show-map').click(function(){
-          $('.map').slideToggle();
-        });
-
         $('.portfolio-slide-gallery .gallery').slick({
           nextArrow: '.next-slide',
           prevArrow: '.prev-slide'
@@ -36,38 +32,15 @@
       }
     },
     // Home page
-    'home': {
+    'contact': {
       init: function() {
-        // JavaScript to be fired on the home page
+        // JavaScript to be fired on the contact page
+        $('.show-map').click(function(){
+          $('.map').slideToggle();
+        });
       },
       finalize: function() {
-        // JavaScript to be fired on the home page, after the init JS
-        // var offset = $(window).width() / 20;
-        // var accum = 0;
-        // var i = 0;
 
-        // $('.tab').each(function(){
-        //     accum += $(this).prev('.tab').find('h2').outerWidth();
-        //     var margin = 0;
-        //     if (i !== 0) {
-        //       margin = accum - offset*i - 15*i;
-        //     } else {
-        //       margin = accum;
-        //     }
-        //     $('h2', this).css("margin-left", margin);
-        //     i++;
-        // });
-        // $('.tab h2').click(function(){
-        //   console.log("clicked!");
-        //   $(this).parent().css("z-index", 1);
-        // });
-
-      }
-    },
-    // About us page, note the change from about-us to about_us.
-    'about_us': {
-      init: function() {
-        // JavaScript to be fired on the about us page
       }
     },
     //Portfolio archive pages
@@ -91,11 +64,17 @@
             path: '.pagination .next',
             append: '.portfolio',
             hideNav: '.pagination',
-            status: '.page-load-status'
+            status: '.page-load-status',
+            debug: true,
           });
         } else {
           $('.page-load-status').hide();
         }
+
+        // jQuery
+        container.on( 'scrollThreshold.infiniteScroll', function( event ) {
+          console.log('Scroll at bottom');
+        });
 
         container.on('append.infiniteScroll', function(event, response, path, items){
             $('audio').mediaelementplayer();
@@ -106,7 +85,7 @@
                 navigation: true
               });
             }
-        })
+        });
         container.on( 'last.infiniteScroll', function( event, response, path ) {
           $('.post-end').show();
         });
@@ -115,9 +94,9 @@
     // Blog index page 
     'blog': {
       init: function() {
+        var container = $('.posts');
 
         if($('.nav-links .nav-previous a').length > 0) {
-          var container = $('.posts');
           container.infiniteScroll({
             // options
             path: '.nav-links .nav-previous a',

@@ -24,4 +24,4 @@
     </div>
     <p><?php _e('Loading', 'blueleaf'); ?>...</p>
 </div>
- <div class="post-end"><?php _e('There are no more posts', 'blueleaf'); ?></div>
+ <div class="post-end"><p><?php _e('Thats all there is I\'m afriad!', 'blueleaf'); ?><br><?php _e('If you like what you see please get in touch and let\'s make music!', 'blueleaf'); ?></p><a href="/contact/" class="btn btn-outline"><?php _e( 'Contact Me'); ?></a></div>

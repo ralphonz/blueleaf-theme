@@ -33,6 +33,24 @@ function body_class($classes) {
 add_filter('body_class', __NAMESPACE__ . '\\body_class');
 
 /**
+ * Add async to any asset
+ * @since 1.1
+ * @link  https://stackoverflow.com/questions/18944027/how-do-i-defer-or-async-this-wordpress-javascript-snippet-to-load-lastly-for-fas
+ * You can add async to any script without code changes, just add #asyncload to script url as: 
+ * wp_enqueue_script('dcsnt', '/js/jquery.social.media.tabs.1.7.1.min.js#asyncload' )
+ */
+function add_async_forscript($url)
+{
+    if (strpos($url, '#asyncload')===false)
+        return $url;
+    else if (is_admin())
+        return str_replace('#asyncload', '', $url);
+    else
+        return str_replace('#asyncload', '', $url)."' async='async"; 
+}
+// add_filter('clean_url', __NAMESPACE__ . '\\add_async_forscript', 11, 1);
+
+/**
  * Clean up the_excerpt()
  */
 function excerpt_more() {
@@ -254,15 +272,20 @@ function get_post_playlist( $post = 0, $html = true ) {
     return apply_filters( 'get_post_playlist', $playlist, $post, $playlists );
 }
 
+/**
+ * Set posts per page for portfolio
+ */
 function set_posts_per_page_for_towns_cpt( $query ) {
   if ( !is_admin() && $query->is_main_query() && is_post_type_archive( 'portfolio' ) ) {
-    $query->set( 'posts_per_page', '2' );
+    $query->set( 'posts_per_page', '3' );
   }
 }
 add_action( 'pre_get_posts',  __NAMESPACE__ . '\\set_posts_per_page_for_towns_cpt' );
 
 
-
+/**
+ * Set the template for portfolio taxonomies
+ */
 function portfolio_tax_template( $template = '' ) {
 
  if (is_tax('attribute') || is_tax('style') || is_tax('type') ) {

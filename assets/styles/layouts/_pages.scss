@@ -15,7 +15,7 @@
   @include media-breakpoint-up(lg) {
     width: 100vw;
     position: relative;
-    left: -11vw;
+    left: -14vw;
     padding-left: 12.5vw;
     padding-right: 12.5vw;
     margin-top: em(100);
@@ -39,7 +39,6 @@
       }
     }
   }
-
   a {
     color: $blue--light;
 
@@ -64,7 +63,7 @@
   .large-paragraph {
     margin-bottom: em(32);
   }
-  &:last-of-type {
+  &:last-child {
     margin-bottom: 0;
   }
 

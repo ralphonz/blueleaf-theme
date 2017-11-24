@@ -23,11 +23,14 @@
         );
 
       $audio_url = wp_get_attachment_url( $media[0]->ID ); 
-      $genres = get_terms( 'style' );
+      $terms = get_the_terms( $post->ID, 'style' );
     ?>
 
-    <h3 class="audio-track-title"><?php echo $media[0]->post_title; ?> <span class="genres"><span class="genre-sep">-</span><?php foreach ($genres as $genre) { ?>
-      <a href="<?php echo get_term_link($genre->term_id); ?>"><?php echo $genre->name; ?></a>, 
+    <h3 class="audio-track-title"><?php echo $media[0]->post_title; ?> <span class="genres">
+      <?php if ( $terms && ! is_wp_error( $terms ) ) { ?>
+        <span class="genre-sep">-</span><?php foreach ($terms as $genre) { ?>
+        <a href="<?php echo get_term_link($genre->term_id); ?>"><?php echo $genre->name; ?></a>,
+      <?php } ?>
     <?php } ?></span></h3>
 
     <?php echo do_shortcode('[audio src="'.$audio_url.'"]'); ?>

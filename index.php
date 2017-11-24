@@ -29,5 +29,5 @@
       </div>
       <p><?php _e('Loading', 'blueleaf'); ?>...</p>
   </div>
-  <div class="post-end"><?php _e('There are no more posts', 'blueleaf'); ?></div>
+  <div class="post-end"><?php _e('Sorry, There are no more posts!  Check back soon for more or take a lok at the rest of the site.', 'blueleaf'); ?></div>
 <?php endif; ?>

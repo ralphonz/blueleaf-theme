@@ -27,6 +27,13 @@
       font-size: em(46, 18);
     }
   }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 1em;
+  }
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 2em;
+  }
 }
 .hero-image {
   position: fixed;

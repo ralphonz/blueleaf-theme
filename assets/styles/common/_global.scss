@@ -24,6 +24,7 @@ body {
 }
 .content {
   padding: 0 em(20);
+  overflow: hidden;
 
   *:not(.page-template-template-bold .section--blue, .page-template-template-bold .section--blue *, .contact-form, .contact-form *) {
     opacity: 0;

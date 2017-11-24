@@ -19,7 +19,8 @@
         object-fit: cover;
 
         @include media-breakpoint-up(md) {
-          width: 70vmin;
+          height: 70vmin;
+          width: auto;
         }
       }
       @include media-breakpoint-up(md) {
@@ -155,6 +156,7 @@
           flex-basis: 33%;
           border-top: none;
           font-size: em(14);
+          justify-content: flex-end;
         }
       }
 

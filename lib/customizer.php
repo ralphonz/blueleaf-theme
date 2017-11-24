@@ -136,7 +136,7 @@ function customize_social_icons( $wp_customize ) {
 add_action( 'customize_register', __NAMESPACE__ . '\\customize_social_icons' );
 
 /**
- * Contact Linka and info Customizer
+ * Contact Link and info Customizer
  */
 function customize_contact_info( $wp_customize ) {
 
@@ -154,7 +154,7 @@ function customize_contact_info( $wp_customize ) {
       'url'   => '',
       'transport' => 'postMessage',
       'type' => 'option',
-      'sanitize_callback' => 'esc_url_raw',
+      'sanitize_callback' => 'absint',
     ]
   );
 

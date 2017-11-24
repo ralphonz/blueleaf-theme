@@ -13,6 +13,6 @@
       ?>
     </nav>
     <?php dynamic_sidebar('sidebar-footer'); ?>
-    <p class="copyright">&copy; <?php _e('Copyright', 'blueleaf');?> <a href="https://blueleafstudio.net">Blueleaf Studio</a> <?php echo date("Y"); ?></p>
+    <p class="copyright">&copy; <?php _e('Copyright', 'blueleaf');?> <a href="https://blueleafstudio.net" target="_blank">Blueleaf Studio</a> <?php echo date("Y"); ?></p>
   </div>
 </footer>

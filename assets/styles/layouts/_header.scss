@@ -101,7 +101,7 @@ path {
     padding: em(10) 0;
 
     @include media-breakpoint-up(md) {
-      padding: .625em 0 .625em 1.25vw;
+      padding: .625em 1.25vw .625em 1.25vw;
       text-align: left;
     }
   }
@@ -125,6 +125,9 @@ path {
         visibility: visible;
         margin-right: 0;
         color: $white;
+      }
+      .fa-sliders {
+        transform: none;
       }
     }
 

@@ -140,6 +140,19 @@
     .section--blue {
       display: flex;
       flex-direction: column;
+      
+      h2 {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+
+        @include media-breakpoint-up(md) {
+          margin-bottom: 0;
+          padding-left: 0;
+          padding-right: 0;
+          font-size: em(34);
+          text-align: left;
+        }
+      }
 
       @include media-breakpoint-up(md) {
         flex-direction: row;
@@ -162,18 +175,8 @@
           margin-bottom: 0;
         }
       }
-
-      h2 {
-        padding-left: 1.5em;
-        padding-right: 1.5em;
-
-        @include media-breakpoint-up(md) {
-          margin-bottom: 0;
-          padding-left: 0;
-          padding-right: 0;
-          font-size: em(34);
-          text-align: left;
-        }
+      @include media-breakpoint-up(lg) {
+        left: -10.95vw;
       }
     }
   }
