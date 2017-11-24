@@ -67,6 +67,7 @@
             container.fullpage({
               sectionSelector: '.portfolio',
               navigation: true,
+              keyboardScrolling: false,
               afterLoad: function(anchorLink, index){
               // Section indexes in fullpage start at 1
                 if(index === $('#bl-full-page .portfolio').length){
@@ -93,6 +94,7 @@
               container.fullpage({
                 sectionSelector: '.portfolio',
                 navigation: true,
+                keyboardScrolling: false,
                 // autoScrolling:false
               });
 

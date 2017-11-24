@@ -54,6 +54,10 @@
         height: 20px;
         padding-top: 8px;
 
+        span {
+          outline: none;
+        }
+
         .mejs-time-total, .mejs-time-loaded {
           height: 5px;
           border-radius: 5px;
@@ -78,6 +82,9 @@
           border-radius: 100%;
           top: -3px;
         }
+        .mejs-time-handle-content {
+          display: none;
+        }
       }
       
       //Volume control
@@ -85,7 +92,6 @@
         
 
         .mejs-horizontal-volume-total {
-          top:13px;
           height: 5px;
           border-radius: 5px;
           background-color: $blue--dark;
