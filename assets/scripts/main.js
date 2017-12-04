@@ -73,7 +73,8 @@
                 if(index === $('#bl-full-page .portfolio').length){
                   container.infiniteScroll('loadNextPage');
                 }
-              }
+              },
+              scrollBar:true
             });
           }
         }

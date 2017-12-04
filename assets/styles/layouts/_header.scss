@@ -96,6 +96,10 @@ path {
 
 #menu-primary-navigation {
   padding: em(10) 0;
+
+  @include media-breakpoint-up(lg) {
+    padding-left: 0.5vw;
+  }
   li {
     text-align: center;
     padding: em(10) 0;
