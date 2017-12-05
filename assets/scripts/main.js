@@ -68,13 +68,13 @@
               sectionSelector: '.portfolio',
               navigation: true,
               keyboardScrolling: false,
+              scrollBar:true,
               afterLoad: function(anchorLink, index){
               // Section indexes in fullpage start at 1
                 if(index === $('#bl-full-page .portfolio').length){
                   container.infiniteScroll('loadNextPage');
                 }
               },
-              scrollBar:true
             });
           }
         }
@@ -96,11 +96,10 @@
                 sectionSelector: '.portfolio',
                 navigation: true,
                 keyboardScrolling: false,
-                // autoScrolling:false
+                scrollBar:true,
               });
 
             }
-            // $.fn.fullpage.silentMoveTo('wonky-bonk-street')
         });
         container.on( 'last.infiniteScroll', function( event, response, path ) {
           $('.post-end').show();
