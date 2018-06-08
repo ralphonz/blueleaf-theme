@@ -1,4 +1,4 @@
-<article <?php post_class('bl-full-page'); ?> data-anchor="<?php echo $post->post_name; ?>" data-tooltip="<?php the_title(); ?>">
+<article <?php post_class('bl-full-page'); ?> data-anchor="<?php echo $post->post_name; ?>">
 
   <header>
     <h2><?php echo the_field( 'client' ); ?> <span class="subtitle"><?php the_title(); ?></span></h2>
