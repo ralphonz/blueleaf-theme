@@ -30,7 +30,7 @@
     }
   },
   "config": {
-    "devUrl": "http://blueleafrecordingstudio.dev"
+    "devUrl": "http://blueleafrecordingstudio.local"
   },
   "unused": {
     "fullpage.js": {
