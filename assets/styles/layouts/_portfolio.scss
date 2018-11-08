@@ -1,7 +1,7 @@
 .single-portfolio {
   .portfolio-slide-gallery {
-    width: 100%; 
-    overflow: hidden; 
+    width: 100%;
+    overflow: hidden;
     background-color: $grey--light;
     @include bdr-btm($grey);
     position: relative;
@@ -13,7 +13,7 @@
       .gallery-item {
         max-width: 100%;
         margin-bottom: 0;
-        padding: 0; 
+        padding: 0;
         .gallery-caption {
           position: relative;
           margin-top:-60px;
@@ -59,7 +59,7 @@
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
-    
+
 
     @include media-breakpoint-up(md) {
       padding: em(20) 2.5% 0;
@@ -83,7 +83,7 @@
     padding: 1em;
     text-align: center;
     background-color: $white;
-    
+
     @include bdr($grey);
     border-top: none;
   }
@@ -110,15 +110,34 @@
   }
   .project-attributes {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     border-bottom-left-radius: 2em;
     border-bottom-right-radius: .25em;
     .fa {
       font-size: em(20);
+      margin-right: 0.25em;
 
       @include media-breakpoint-up(md) {
         font-size: em(28);
-        margin: em(8, 28) 0; 
+        margin: em(8, 28);
+      }
+    }
+
+    a {
+      @include media-breakpoint-down(md) {
+        @include bdr($grey);
+        @include leaf(15px);
+        padding: 0.25em 0.5em;
+        margin: 0.25em;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      .att-name {
+        display: inline-block;
+        position: relative;
+        top: em(-4);
       }
     }
   }
@@ -257,10 +276,10 @@
     // animation-iteration-count: 1;
   }
   .page-header {
-    margin-bottom: 0;  
+    margin-bottom: 0;
   }
   .main {
-    @include media-breakpoint-up(md) {   
+    @include media-breakpoint-up(md) {
       height: 100vh;
     }
   }
@@ -292,7 +311,7 @@
         }
         a.btn-outline-grey {
           display: inline-block;
-          padding: em(10) em(20); 
+          padding: em(10) em(20);
           background-color: $white;
 
         }
@@ -338,7 +357,7 @@
           display: flex;
           align-items: center;
         }
-        
+
         img {
           width:100%;
           height: auto;
@@ -348,7 +367,7 @@
 
         }
       }
-      
+
     }
     footer {
       position: relative;
@@ -421,7 +440,7 @@
         }
       }
     }
-  } 
+  }
   #fp-nav {
     // transform: translateY(100vh);
     // animation: slideUp .7s 1s ease-in-out;

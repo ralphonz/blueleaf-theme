@@ -56,6 +56,7 @@
             append: '.portfolio',
             hideNav: '.pagination',
             status: '.page-load-status',
+            scrollThreshold: 100
           });
         } else {
           $('.page-load-status').hide();
@@ -91,7 +92,7 @@
               $.fn.fullpage.destroy('all');
 
               //setting the active section as before
-              $('.portfolio').eq(activeSectionIndex).addClass('active');
+              $('.portfolio').eq(activeSectionIndex-1).addClass('active');
               container.fullpage({
                 sectionSelector: '.portfolio',
                 navigation: true,
@@ -101,12 +102,13 @@
 
             }
         });
+
         container.on( 'last.infiniteScroll', function( event, response, path ) {
           $('.post-end').show();
         });
       }
     },
-    // Blog index page 
+    // Blog index page
     'blog': {
       init: function() {
         var container = $('.posts');
