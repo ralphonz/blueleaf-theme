@@ -6,7 +6,7 @@
   padding: em(36);
   color: $white;
   background: $blue--dark;
-  
+
   @include media-breakpoint-up(md) {
     padding-top: em(50);
     padding-bottom: em(60);
@@ -49,7 +49,7 @@
   h2, .large-paragraph {
     color: $white;
   }
-  h3 { 
+  h3 {
     margin-bottom: 0;
     font-size: em(42);
     color: $white;
@@ -90,6 +90,15 @@
   }
 }
 
+.has-hero-image:not(.home) {
+  .page-header h1 {
+    display: none;
+  }
+  .page-header.slide-title h1 {
+    display: block;
+  }
+}
+
 
 /************************ Bold Page Template and Contact Page Templates *****************************/
 .page-template-template-bold:not(#tinymce), .page-template-template-contact {
@@ -97,7 +106,6 @@
     padding-left: em(40);
     padding-right: em(40);
     line-height: 1.5;
-    color: $grey;
 
     @include media-breakpoint-up(md) {
       margin-right: 50%;

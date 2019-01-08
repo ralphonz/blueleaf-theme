@@ -19,14 +19,16 @@ h2 {
 h3, h4 {
   @include heading;
 }
-.page-header, .post-header, .single .entry-title {
+.page-header,
+.post-header,
+.single .entry-title {
   position: relative;
   margin-bottom: em(20, 16);
 
   @include media-breakpoint-up(md) {
     margin-bottom: 0;
   }
-  
+
   h1 {
     margin-bottom: 0;
     padding: em(9, 36) em(10, 36) em(7, 36);
@@ -35,7 +37,7 @@ h3, h4 {
     .btn {
       font-size: em(14, 36);
       float: right;
-    } 
+    }
 
     @include media-breakpoint-up(md) {
       position: fixed;
@@ -53,7 +55,7 @@ h3, h4 {
 }
 .content, .entry-content {
   line-height: 2em;
-  
+
   ul li, ol li {
     padding: em(10) 0;
   }
@@ -108,7 +110,7 @@ h3, h4 {
   text-align: justify ;
   hyphens: auto;
   quotes: "“" "”" "‘" "’";
-  
+
   p {
     line-height: 1.5;
   }

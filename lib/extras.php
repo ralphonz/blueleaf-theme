@@ -28,6 +28,11 @@ function body_class($classes) {
     $classes[] = $post->post_type . '-archive';
   }
 
+  //Add class if has a hero image
+  if (is_page() && has_post_thumbnail()) {
+    $classes[] = 'has-hero-image';
+  }
+
   return $classes;
 }
 add_filter('body_class', __NAMESPACE__ . '\\body_class');
@@ -36,7 +41,7 @@ add_filter('body_class', __NAMESPACE__ . '\\body_class');
  * Add async to any asset
  * @since 1.1
  * @link  https://stackoverflow.com/questions/18944027/how-do-i-defer-or-async-this-wordpress-javascript-snippet-to-load-lastly-for-fas
- * You can add async to any script without code changes, just add #asyncload to script url as: 
+ * You can add async to any script without code changes, just add #asyncload to script url as:
  * wp_enqueue_script('dcsnt', '/js/jquery.social.media.tabs.1.7.1.min.js#asyncload' )
  */
 function add_async_forscript($url)
@@ -46,7 +51,7 @@ function add_async_forscript($url)
     else if (is_admin())
         return str_replace('#asyncload', '', $url);
     else
-        return str_replace('#asyncload', '', $url)."' async='async"; 
+        return str_replace('#asyncload', '', $url)."' async='async";
 }
 // add_filter('clean_url', __NAMESPACE__ . '\\add_async_forscript', 11, 1);
 
@@ -150,7 +155,7 @@ function remove_first_shortcode( $content = null , $string = '') {
   if ( empty( $shortcode_regex ) ) {
     return $content;
   }
-  
+
   preg_match_all( '/' . $shortcode_regex . '/s', $content, $matches );
   /**
    * Matches[2] is empty, return early.
@@ -259,7 +264,7 @@ function get_post_playlists( $post, $html = true ) {
 function get_post_playlist( $post = 0, $html = true ) {
     $playlists = get_post_playlists( $post, $html );
     $playlist = reset( $playlists );
- 
+
     /**
      * Filters the first-found post gallery.
      *
@@ -295,4 +300,4 @@ function portfolio_tax_template( $template = '' ) {
  return $template;
 
 }
-add_filter( 'taxonomy_template', __NAMESPACE__ . '\\portfolio_tax_template' ); 
+add_filter( 'taxonomy_template', __NAMESPACE__ . '\\portfolio_tax_template' );

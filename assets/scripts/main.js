@@ -31,7 +31,7 @@
         // JavaScript to be fired on all pages, after page specific JS is fired
       }
     },
-    // Home page
+    // Contact page
     'contact': {
       init: function() {
         // JavaScript to be fired on the contact page
@@ -43,27 +43,58 @@
 
       }
     },
+    // Standard Pages
+    'page': {
+      init: function() {
+        // JavaScripty to be fired on standard Pages
+        $(window).scroll(function(){
+          var sticky = $('.page-header'),
+              scroll = $(window).scrollTop();
+
+          if (scroll > $(window).height()*0.65) {
+            sticky.addClass('slide-title');
+          } else {
+            sticky.removeClass('slide-title');
+          }
+        });
+      },
+      finalize: function() {
+
+      }
+    },
     //Portfolio archive pages
     'portfolio_archive': {
       init: function() {
         var container = $('#bl-full-page');
+        var portfolioItems = $('#bl-full-page .portfolio').length;
 
         $('audio').attr('data-keepplaying', '');
 
-        if($('.pagination .next').length > 0) {
+        if( windowWidth < 768 && $('.pagination .next').length > 0) {
           container.infiniteScroll({
             path: '.pagination .next',
             append: '.portfolio',
             hideNav: '.pagination',
             status: '.page-load-status',
+            history: false,
             scrollThreshold: 100
+          });
+        } else if ( windowWidth >= 768 && $('.pagination .next').length > 0) {
+          container.infiniteScroll({
+            path: '.pagination .next',
+            append: '.portfolio',
+            hideNav: '.pagination',
+            status: '.page-load-status',
+            scrollThreshold: 100,
+            history: false,
+            elementScroll: '#bl-full-page'
           });
         } else {
           $('.page-load-status').hide();
         }
 
         //fullPage JS only on larger screens
-        if (windowWidth > 768) {
+        if (windowWidth >= 768) {
           if( container.length ) {
             container.fullpage({
               sectionSelector: '.portfolio',
@@ -72,7 +103,7 @@
               scrollBar:true,
               afterLoad: function(anchorLink, index){
               // Section indexes in fullpage start at 1
-                if(index === $('#bl-full-page .portfolio').length){
+                if(index === portfolioItems) {
                   container.infiniteScroll('loadNextPage');
                 }
               },
@@ -81,7 +112,13 @@
         }
 
         container.on('append.infiniteScroll', function(event, response, path, items){
-            $('audio').mediaelementplayer();
+            var audioPlayer = $('audio');
+
+            if (audioPlayer.length ) {
+              audioPlayer.mediaelementplayer();
+            }
+
+            portfolioItems = $('#bl-full-page .portfolio').length;
 
             if ( $( 'html' ).hasClass( 'fp-enabled' )) {
 
@@ -92,12 +129,19 @@
               $.fn.fullpage.destroy('all');
 
               //setting the active section as before
-              $('.portfolio').eq(activeSectionIndex-1).addClass('active');
+              $('.portfolio').eq(activeSectionIndex).addClass('active');
+
               container.fullpage({
                 sectionSelector: '.portfolio',
                 navigation: true,
                 keyboardScrolling: false,
                 scrollBar:true,
+                afterLoad: function(anchorLink, index){
+                // Section indexes in fullpage start at 1
+                  if(index === portfolioItems) {
+                    container.infiniteScroll('loadNextPage');
+                  }
+                },
               });
 
             }
