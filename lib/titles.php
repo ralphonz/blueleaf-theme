@@ -5,16 +5,6 @@ namespace Roots\Sage\Titles;
 add_filter('get_the_archive_title', __NAMESPACE__ . '\\filter_archive_title');
 
 function filter_archive_title($title) {
-  // if ( is_category() ) {
-  //         $title = single_cat_title( '', false );
-  //     } elseif ( is_tag() ) {
-  //         $title = single_tag_title( '', false );
-  //     } elseif ( is_author() ) {
-  //         $title = '<span class="vcard">' . get_the_author() . '</span>' ;
-  //     } else {
-  //         $title = str_replace('Archives: ', '', $title);
-  //     }
-
   // return $title;
   // Skip if the site isn't LTR, this is visual, not functional.
   // Should try to work out an elegant solution that works for both directions.

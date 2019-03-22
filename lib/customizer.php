@@ -26,15 +26,15 @@ add_action('customize_preview_init', __NAMESPACE__ . '\\customize_preview_js');
 function customize_social_icons( $wp_customize ) {
 
   // Add a section for our soical network url settings
-  $wp_customize->add_section( 'social_icons', 
+  $wp_customize->add_section( 'social_icons',
     [
       'title'      => __( 'Social Network URLs', 'blueleaf' ),
       'priority'   => 30,
-    ] 
+    ]
   );
 
    //Add a setting for each social network
-  $wp_customize->add_setting( 'facebook_url', 
+  $wp_customize->add_setting( 'facebook_url',
     [
       'url'   => 'https://facebook.com/',
       'transport' => 'postMessage',
@@ -42,7 +42,7 @@ function customize_social_icons( $wp_customize ) {
       'sanitize_callback' => 'esc_url_raw',
     ]
   );
-  $wp_customize->add_setting( 'twitter_url', 
+  $wp_customize->add_setting( 'twitter_url',
     [
       'url'   => 'https://twitter.com/',
       'transport' => 'postMessage',
@@ -50,7 +50,7 @@ function customize_social_icons( $wp_customize ) {
       'sanitize_callback' => 'esc_url_raw',
     ]
   );
-  $wp_customize->add_setting( 'google_url', 
+  $wp_customize->add_setting( 'google_url',
     [
       'url'   => 'https://google.com/',
       'transport' => 'postMessage',
@@ -58,7 +58,7 @@ function customize_social_icons( $wp_customize ) {
       'sanitize_callback' => 'esc_url_raw',
     ]
   );
-  $wp_customize->add_setting( 'linkedin_url', 
+  $wp_customize->add_setting( 'linkedin_url',
     [
       'url'   => 'https://linkedin.com/',
       'transport' => 'postMessage',
@@ -66,7 +66,7 @@ function customize_social_icons( $wp_customize ) {
       'sanitize_callback' => 'esc_url_raw',
     ]
   );
-  $wp_customize->add_setting( 'pinterest_url', 
+  $wp_customize->add_setting( 'pinterest_url',
     [
       'url'   => 'https://pinterest.com/',
       'transport' => 'postMessage',
@@ -74,9 +74,17 @@ function customize_social_icons( $wp_customize ) {
       'sanitize_callback' => 'esc_url_raw',
     ]
   );
-  $wp_customize->add_setting( 'instagram_url', 
+  $wp_customize->add_setting( 'instagram_url',
     [
       'url'   => 'https://instagram.com/',
+      'transport' => 'postMessage',
+      'type' => 'option',
+      'sanitize_callback' => 'esc_url_raw',
+    ]
+  );
+  $wp_customize->add_setting( 'soundcloud_url',
+    [
+      'url'   => 'https://soundcloud.com/',
       'transport' => 'postMessage',
       'type' => 'option',
       'sanitize_callback' => 'esc_url_raw',
@@ -132,6 +140,14 @@ function customize_social_icons( $wp_customize ) {
       'type'     => 'url',
     ]
   );
+  $wp_customize->add_control( 'soundcloud_url_control',
+    [
+      'label'    => __( 'SoundCloud URL', 'blueleaf' ),
+      'section'  => 'social_icons',
+      'settings' => 'soundcloud_url',
+      'type'     => 'url',
+    ]
+  );
 }
 add_action( 'customize_register', __NAMESPACE__ . '\\customize_social_icons' );
 
@@ -141,15 +157,15 @@ add_action( 'customize_register', __NAMESPACE__ . '\\customize_social_icons' );
 function customize_contact_info( $wp_customize ) {
 
   // Add a section for the contact info settings
-  $wp_customize->add_section( 'contact_info', 
+  $wp_customize->add_section( 'contact_info',
     [
       'title'      => __( 'Contact Info', 'blueleaf' ),
       'priority'   => 30,
-    ] 
+    ]
   );
 
   //Add a setting
-  $wp_customize->add_setting( 'quick_contact_url', 
+  $wp_customize->add_setting( 'quick_contact_url',
     [
       'url'   => '',
       'transport' => 'postMessage',
@@ -167,7 +183,7 @@ function customize_contact_info( $wp_customize ) {
       'type'     => 'dropdown-pages',
     ]
   );
-  
+
 }
 add_action( 'customize_register', __NAMESPACE__ . '\\customize_contact_info' );
 
@@ -181,7 +197,7 @@ function customize_post_display( $wp_customize ) {
     [
       'title'   => __( 'Posts Display', 'blueleaf' ),
       'priority'=> 30,
-    ] 
+    ]
   );
 
   //Add settings for post display options
@@ -189,19 +205,19 @@ function customize_post_display( $wp_customize ) {
     [
       'url'   => '',
       'transport' => 'postMessage',
-      'type' => 'option', 
+      'type' => 'option',
       'sanitize_callback' => __NAMESPACE__ . '\\sanitize_checkbox',
     ]
   );
 
   //Add the input fields
-  $wp_customize->add_control( 'author_dsplay_control', 
+  $wp_customize->add_control( 'author_dsplay_control',
     [
       'label'     => __( 'Show post author', 'blueleaf' ),
-      'section'   => 'post_display', 
+      'section'   => 'post_display',
       'settings'  => 'author_display',
       'type'      => 'checkbox',
-    ] 
+    ]
   );
 }
 add_action( 'customize_register', __NAMESPACE__ . '\\customize_post_display' );

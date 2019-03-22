@@ -13,7 +13,7 @@
     <?php endif; ?>
   </h1>
   <?php if ( has_post_thumbnail() && is_page() ) : ?>
-    <div class="hero <?php if (!is_front_page()) { echo 'jarallax" data-jarallax data-speed="0.5" class="jarallax"'; } else { echo '"';} ?> >
+    <div class="hero jarallax" data-jarallax data-speed="0.5" >
       <?php the_post_thumbnail('full', ['class'=>'hero-image jarallax-img']); ?>
       <?php if(!is_front_page() && get_field( 'subtitle' )) { ?>
         <h2 class="subtitle"><?php the_field( 'subtitle' ); ?></h2>

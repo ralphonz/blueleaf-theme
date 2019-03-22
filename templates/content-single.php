@@ -14,7 +14,7 @@
     </div>
     <footer>
       <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'blueleaf'), 'after' => '</p></nav>']); ?>
-      
+
       <?php if(has_tag()) : ?>
         <div class="tags">
           <?php the_tags(); ?>
@@ -23,7 +23,7 @@
 
       <?php if(has_category()) : ?>
         <div class="categories">
-          <?php _e('Related Categories', 'blueleaf'); ?>: 
+          <?php _e('Related Categories', 'blueleaf'); ?>:
           <?php the_category() ?>
         </div>
       <?php endif; ?>
